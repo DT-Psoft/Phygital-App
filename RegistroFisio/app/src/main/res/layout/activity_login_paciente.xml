@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#05253C"
-    tools:context=".ChooseLoginView">
-
+    tools:context=".LoginPaciente">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,25 +20,31 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imageViewPaciente"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="150dp"
             android:layout_marginBottom="10dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/ic_adjust_black_48dp"  />
+            android:src="@drawable/ic_adjust_black_48dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/text_input_pin_acceso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Pin de acceso" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/button_login_fisioterapeuta_menu"
+            android:id="@+id/button_login_paciente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Fisioterapeuta" />
-
-        <Button
-            android:id="@+id/button_login_paciente_menu"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Paciente" />
+            android:text="Iniciar sesión" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

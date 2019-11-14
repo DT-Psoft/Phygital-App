@@ -3,10 +3,7 @@ package com.example.registrofisio
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
-import kotlinx.android.synthetic.main.activity_choose_login.*
-import javax.security.auth.login.LoginException
 
 class ChooseLoginView : AppCompatActivity() {
 
@@ -15,11 +12,18 @@ class ChooseLoginView : AppCompatActivity() {
         setContentView(R.layout.activity_choose_login)
 
 
-        var button_acticity_login_fisioterapeuta = findViewById(R.id.button_login_fisioterapeuta) as Button
+        var button_acticity_login_fisioterapeuta : Button =  findViewById(R.id.button_login_fisioterapeuta_menu)
+
+        var button_activity_login_paciente : Button =  findViewById(R.id.button_login_paciente_menu)
 
         button_acticity_login_fisioterapeuta.setOnClickListener {
-            val intent = Intent(this, LoginFisioterapeuta::class.java)
-            startActivity(intent);
+            val intentFisio = Intent(this, LoginFisioterapeuta::class.java)
+            startActivity(intentFisio);
+        }
+
+        button_activity_login_paciente.setOnClickListener {
+            val intentPaciente = Intent(this, LoginPaciente::class.java)
+            startActivity(intentPaciente);
         }
     }
 }
