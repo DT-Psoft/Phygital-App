@@ -29,14 +29,14 @@
             android:src="@drawable/ic_adjust_black_48dp"  />
 
         <Button
-            android:id="@+id/button_login_fisioterapeuta"
+            android:id="@+id/button_login_fisioterapeuta_menu"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
             android:text="Fisioterapeuta" />
 
         <Button
-            android:id="@+id/button_login_paciente"
+            android:id="@+id/button_login_paciente_menu"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="Paciente" />
