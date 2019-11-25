@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
-        <activity android:name=".LoginPaciente"></activity>
+        <activity
+            android:name=".MenuPrincipal"
+            android:label="@string/title_activity_menu_principal"
+            android:theme="@style/NoActionBar"></activity>
+        <activity android:name=".LoginPaciente" />
         <activity android:name=".LoginFisioterapeuta" />
         <activity android:name=".ChooseLoginView">
             <intent-filter>
