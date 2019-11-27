@@ -10,15 +10,17 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.registrofisio.R
+import com.google.android.gms.common.internal.ImagesContract
 import kotlinx.android.synthetic.main.rv_demo_holder.*
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import org.w3c.dom.Text
 
 
-data class User(var firstName: String = "", var lastName: String = "", var age: Int = 0) {
+data class User(var firstName: String = "", var lastName: String = "", var age: Int = 0, var state: String = "") {
     var id: String? = null
 
     override fun equals(other: Any?): Boolean {
@@ -44,11 +46,17 @@ class DemoAdapter(private val users: ArrayList<User>) : RecyclerView.Adapter<Dem
     class DemoViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         private var tvFullName: TextView
         private var tvAge: TextView
+        private var tvState: TextView
+        private var btnDelete: ImageButton
+        private var btnEdit: ImageButton
 
 
         init {
             tvFullName = view.findViewById(R.id.full_name)
             tvAge = view.findViewById(R.id.age)
+            tvState = view.findViewById(R.id.state)
+            btnDelete = view.findViewById(R.id.delete_button)
+            btnEdit = view.findViewById(R.id.edit_button)
 
 
 
@@ -57,6 +65,20 @@ class DemoAdapter(private val users: ArrayList<User>) : RecyclerView.Adapter<Dem
         public fun bind(user: User) {
             tvFullName.setText("${user.lastName}, ${user.firstName}")
             tvAge.setText("${user.age}")
+            tvState.setText("${user.state}")
+            val database = FirebaseDatabase.getInstance()
+            val usersRef = database.getReference("app").child("users")
+
+            btnDelete.setOnClickListener{
+
+                usersRef.child(user.id!!).removeValue()
+                val snack = Snackbar.make(it,"Paciente eliminado con exito",Snackbar.LENGTH_LONG)
+
+            }
+            btnEdit.setOnClickListener{
+                val snack = Snackbar.make(it,"Esto sera para editar, aun no se como saldra",Snackbar.LENGTH_LONG)
+                snack.show()
+            }
 
         }
 
@@ -93,6 +115,7 @@ class HomeFragment : Fragment() {
     private lateinit var etFirstName : EditText
     private lateinit var etLastName : EditText
     private lateinit var etAge : EditText
+    private lateinit var etState: EditText
     private lateinit var btnAddButton : Button
 
     private var users : ArrayList<User> = arrayListOf()
@@ -109,10 +132,12 @@ class HomeFragment : Fragment() {
         etFirstName = root.findViewById(R.id.frame_text)
         etLastName = root.findViewById(R.id.lname_text)
         etAge = root.findViewById(R.id.age_text)
+        etState = root.findViewById(R.id.state_text)
         btnAddButton = root.findViewById(R.id.add_button)
+
        // val ly = view!!.findViewById(R.id.ly) as LinearLayout
 
-       // layoutname = root2.findViewById(R.id.layout_name)
+        //layoutname = root2.findViewById(R.id.layout_name)
 
         rv = root.findViewById(R.id.rv) as RecyclerView
         rv.layoutManager = LinearLayoutManager(activity)
@@ -125,13 +150,15 @@ class HomeFragment : Fragment() {
             val user = User(
                 etFirstName.text.toString().trim(),
                 etLastName.text.toString().trim(),
-                etAge.text.toString().toInt()
+                etAge.text.toString().toInt(),
+                etState.text.toString().trim()
             )
            usersRef.push().setValue(user)
 
             etFirstName.setText("")
             etLastName.setText("")
             etAge.setText("")
+            etState.setText("")
 
         }
 
@@ -163,6 +190,7 @@ class HomeFragment : Fragment() {
                 currentUser?.firstName = user!!.firstName
                 currentUser?.lastName = user!!.lastName
                 currentUser?.age = user!!.age
+                currentUser?.state = user!!.state
                 rv.adapter?.notifyDataSetChanged()
 
             }
