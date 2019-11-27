@@ -28,6 +28,12 @@ class LoginFisioterapeuta : AppCompatActivity() {
 
         val btnOpenMenu: Button = findViewById(R.id.button_login_fisioterapeuta_menu)
 
+        val btnOpenSignUpFisio: Button = findViewById(R.id.button_CreateNewAccount)
+        btnOpenSignUpFisio.setOnClickListener{
+
+            val intentMenu = Intent(this, SignUpFisio::class.java)
+            startActivity(intentMenu)
+        }
 
         btnOpenMenu.setOnClickListener {
             val username2: UserETY? =

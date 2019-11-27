@@ -7,4 +7,96 @@
     android:background="#F5F5F5"
     tools:context=".SignUpFisio">
 
+    <TextView
+        android:id="@+id/textView_createAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/roboto_light"
+        android:text="Crear Cuenta"
+        android:textColor="#094470"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_createAccount">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText_NameNewFisio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nombre"
+            android:inputType="textPersonName"
+            android:maxLength="15"
+            android:maxLines="1"
+            android:textColorHint="#8D000000"
+            android:textColor="#182344"
+            app:backgroundTint="#1C3572"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foregroundTint="#EBAC1616"
+            android:hint="Hola"
+            android:textColor="#000000"
+            android:textColorHint="#7A7A7A"
+            android:visibility="gone"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/colorPrimary"
+            app:errorEnabled="false"
+            app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#EE111111"
+                android:textColorHighlight="#ED000000"
+                android:textColorHint="#F8000000"
+                android:textColorLink="#000000" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <EditText
+            android:id="@+id/editText_EmailNewFisio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:hint="Correo Electronico"
+            android:inputType="textEmailAddress"
+            android:textColor="#182344"
+            android:textColorHint="#8D000000"
+            app:backgroundTint="#1C3572" />
+        <EditText
+            android:id="@+id/editText_PasswordNewFisio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:textColor="#182344"
+            android:textColorHint="#8D000000"
+            app:backgroundTint="#1C3572" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/material_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Registrar"/>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

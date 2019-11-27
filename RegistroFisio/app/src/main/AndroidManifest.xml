@@ -17,6 +17,8 @@
             android:theme="@style/NoActionBar" />
         <activity android:name=".LoginPaciente" />
         <activity android:name=".LoginFisioterapeuta" />
+        <activity android:name=".SignUpFisio" />
+        <activity android:name=".MainActivityFisio" />
         <activity android:name=".ChooseLoginView">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +26,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
