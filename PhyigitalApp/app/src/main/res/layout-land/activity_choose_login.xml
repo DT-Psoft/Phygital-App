@@ -33,13 +33,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Fisioterapeuta" />
+            android:text="Fisioterapeuta"
+            style="@style/buttonLightStyle"/>
 
         <Button
             android:id="@+id/button_login_paciente_menu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Paciente" />
+            android:text="Paciente"
+            style="@style/buttonLightStyle"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

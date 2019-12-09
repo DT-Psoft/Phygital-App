@@ -9,21 +9,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MaterialComponents.NoActionBar"
+        android:theme="@style/NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".CasoClinicoTabs"></activity>
         <activity
-            android:name=".MenuPrincipal"
-            android:label="@string/title_activity_menu_principal"
-            android:theme="@style/NoActionBar" />
-        <activity android:name=".LoginPaciente" />
-        <activity android:name=".LoginFisioterapeuta" />
-        <activity
-            android:name=".SignUpFisio"
-            android:screenOrientation="portrait"
-            android:theme="@style/NoActionBar" />
-
-        <activity android:name=".ChooseLoginView">
+            android:name="com.modelo.phygital.MenuPrincipal"
+            android:label="@string/title_activity_menu_principal" />
+        <activity android:name="com.modelo.phygital.LoginPaciente" />
+        <activity android:name="com.modelo.phygital.LoginFisioterapeuta" />
+        <activity android:name="com.modelo.phygital.SignUpFisio" android:screenOrientation="portrait" />
+        <activity android:name="com.modelo.phygital.MainActivityFisio" />
+        <activity android:name="com.modelo.phygital.ChooseLoginView">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
