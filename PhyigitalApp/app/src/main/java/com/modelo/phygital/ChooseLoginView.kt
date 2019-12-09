@@ -36,7 +36,8 @@ class ChooseLoginView : AppCompatActivity() {
 
         button_activity_login_paciente.setOnClickListener {
             val intentPaciente = Intent(this, LoginPaciente::class.java)
-            startActivity(intentPaciente);
+            startActivity(intentPaciente)
+
         }
     }
 }

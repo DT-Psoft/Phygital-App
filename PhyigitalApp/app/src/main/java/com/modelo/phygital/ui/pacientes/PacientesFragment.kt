@@ -1,4 +1,4 @@
-package com.modelo.phygital.ui.home
+package com.modelo.phygital.ui.pacientes
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -37,7 +37,7 @@ data class User(var firstName: String = "", var lastName: String = "", var age: 
 
 }
 
-class DemoAdapter(private val users: ArrayList<User>) : RecyclerView.Adapter<DemoAdapter.DemoViewHolder>() {
+class DemoAdapterPaciente(private val users: ArrayList<User>) : RecyclerView.Adapter<DemoAdapterPaciente.DemoViewHolder>() {
 
 
     class DemoViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
@@ -89,7 +89,7 @@ class DemoAdapter(private val users: ArrayList<User>) : RecyclerView.Adapter<Dem
         viewType: Int
     ): DemoViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.rv_demo_holder, parent, false) as View
+            .inflate(R.layout.rv_demo_holder_paciente, parent, false) as View
 
         return DemoViewHolder(view)
     }
@@ -106,7 +106,7 @@ private lateinit var rv: RecyclerView
 
 class HomeFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var pacientesViewModel: PacientesViewModel
     private lateinit var layoutname: LinearLayout
 
     private lateinit var etFirstName : EditText
@@ -122,9 +122,9 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
+        pacientesViewModel =
+            ViewModelProviders.of(this).get(PacientesViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_pacientes, container, false)
 
         etFirstName = root.findViewById(R.id.frame_text)
         etLastName = root.findViewById(R.id.lname_text)
@@ -136,9 +136,9 @@ class HomeFragment : Fragment() {
 
         //layoutname = root2.findViewById(R.id.layout_name)
 
-        rv = root.findViewById(R.id.rv) as RecyclerView
+        rv = root.findViewById(R.id.rv_paciente) as RecyclerView
         rv.layoutManager = LinearLayoutManager(activity)
-        rv.adapter = DemoAdapter(users)
+        rv.adapter = DemoAdapterPaciente(users)
 
         btnAddButton.setOnClickListener{
 
