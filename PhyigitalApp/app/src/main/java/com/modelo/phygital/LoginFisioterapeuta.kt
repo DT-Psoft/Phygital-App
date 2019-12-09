@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.Toast
 import com.modelo.phygital.Entities.UserETY
 import com.facebook.stetho.Stetho
+import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.main.activity_login_fisioterapeuta.*
 
 
@@ -27,6 +28,8 @@ class LoginFisioterapeuta : AppCompatActivity() {
         //better performance?
 
         val btnOpenMenu: Button = findViewById(R.id.button_login_fisioterapeuta_menu)
+        val text_input_correo: TextInputEditText = findViewById(R.id.editText_emailLogin)
+        val text_input_contraseña_correo: TextInputEditText = findViewById(R.id.editText_passwordLogin)
 
         val btnOpenSignUpFisio: Button = findViewById(R.id.button_CreateNewAccount)
         btnOpenSignUpFisio.setOnClickListener{
