@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.modelo.phygital.ui.sesiones.SesionesFragment"
+        android:name="com.modelo.phygital.ui.sesionesprovisional.SesionesFragmentprovicional"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 

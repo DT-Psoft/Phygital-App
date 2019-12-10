@@ -1,10 +1,10 @@
-package com.modelo.phygital.ui.sesiones
+package com.modelo.phygital.ui.sesionesprovisional
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class SesionesViewModel : ViewModel() {
+class SesionesViewModelprovisional : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is gallery Fragment"

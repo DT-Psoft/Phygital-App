@@ -17,7 +17,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.modelo.phygital.CasoClinicoTabs
 import com.modelo.phygital.R
-
+import com.modelo.phygital.SesionesActivity
 
 
 data class CasoClinico(var pin: String = "", var padencia: String = "") {
@@ -77,9 +77,7 @@ class DemoAdapterClinica(private val casos: ArrayList<CasoClinico>) : RecyclerVi
 
             }
             btnEdit.setOnClickListener{
-                val snack = Snackbar.make(it,"Esto sera para editar, aun no se como saldra",Snackbar.LENGTH_LONG)
-                snack.show()
-                val intent = Intent(view.context,CasoClinicoTabs::class.java)
+                val intent = Intent(view.context,SesionesActivity::class.java)
 
                 // Also like this
                 startActivity(view.context,intent,null)

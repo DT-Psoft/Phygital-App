@@ -62,7 +62,7 @@ abstract class AppDatabase : RoomDatabase() {
 
         fun initializeData(db: SupportSQLiteDatabase) {
 
-            db.execSQL("INSERT INTO user VALUES (1,'fede', '12345', 0)")
+            db.execSQL("INSERT INTO user VALUES (1,'fe', '1', 0)")
 
 
         }

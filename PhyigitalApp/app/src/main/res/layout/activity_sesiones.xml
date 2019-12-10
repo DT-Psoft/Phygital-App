@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.modelo.phygital.SesionesActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <EditText
+                android:id="@+id/paciente_sesion_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="40"
+                android:hint="Paciente:"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords"
+                android:nextFocusForward="@id/sesion_numero_text" />
+            <EditText
+                android:id="@+id/sesion_numero_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="30"
+                android:hint="Sesion:"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords"
+                android:nextFocusForward="@id/lname_text" />
+
+            <EditText
+                android:id="@+id/fecha_sesion_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="30"
+                android:hint="Fecha:"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords"
+                android:nextFocusForward="@id/descripcion_text"
+ />
+
+
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/descripcion_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:hint="Descripcion:"
+            android:imeOptions="actionNext"
+            android:inputType="textCapWords"
+            android:nextFocusForward="@id/add_sesion_button"/>
+
+        <Button
+            android:id="@+id/add_sesion_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD" />/>
+
+    </LinearLayout>
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_sesiones"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
