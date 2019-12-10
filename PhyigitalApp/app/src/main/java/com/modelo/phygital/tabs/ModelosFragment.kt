@@ -26,7 +26,7 @@ class ModelosFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
 
-        frag_sesiones_text.text= "modelos fragment baby"
+
     }
 
 }

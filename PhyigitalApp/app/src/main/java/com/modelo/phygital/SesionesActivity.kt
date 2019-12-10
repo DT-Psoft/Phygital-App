@@ -21,14 +21,14 @@ import com.modelo.phygital.ui.casos_clinicos.DemoAdapterClinica
 
 
 
-data class Sesion(var paciente: String = "", var sesion: String = "", var fecha: String = "", var descripcion: String = "") {
+data class Sesion(var paciente: String = "", var sesion: String = "", var fecha: String = "", var descripcion: String = "", var actividades: String ="") {
     var id: String? = null
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
 
-        other as CasoClinico
+        other as Sesion
 
         if (id != other.id) return false
 
@@ -48,7 +48,7 @@ class DemoAdapterSesion(private val sesiones: ArrayList<Sesion>) : RecyclerView.
         private var tvPacienteSesion: TextView
         private var tvSesion: TextView
         private var tvFechaSesion: TextView
-        private var tvDescripcion: TextView
+       // private var tvDescripcion: TextView
         private var btnDeleteSesion: ImageButton
         private var btnEditSesion: ImageButton
 
@@ -58,9 +58,9 @@ class DemoAdapterSesion(private val sesiones: ArrayList<Sesion>) : RecyclerView.
             tvPacienteSesion = view.findViewById(R.id.paciente_sesion_tv)
             tvSesion = view.findViewById(R.id.sesion_tv)
             tvFechaSesion = view.findViewById(R.id.fecha_tv)
-            tvDescripcion= view.findViewById(R.id.descripcion_tv)
-            btnDeleteSesion = view.findViewById(R.id.delete_caso_button)
-            btnEditSesion = view.findViewById(R.id.edit_caso_button)
+           // tvDescripcion= view.findViewById(R.id.descripcion_tv)
+            btnDeleteSesion = view.findViewById(R.id.delete_sesion_button)
+            btnEditSesion = view.findViewById(R.id.edit_sesion_button)
         }
 
         public fun bind(sesion: Sesion) {
@@ -68,15 +68,14 @@ class DemoAdapterSesion(private val sesiones: ArrayList<Sesion>) : RecyclerView.
             tvPacienteSesion.setText("${sesion.paciente}")
             tvSesion.setText("${sesion.sesion}")
             tvFechaSesion.setText("${sesion.fecha}")
-            tvDescripcion.setText("${sesion.descripcion}")
+          //  tvDescripcion.setText("${sesion.descripcion}")
             val database = FirebaseDatabase.getInstance()
             val usersRef = database.getReference("app").child("sesionClinica")
 
             btnDeleteSesion.setOnClickListener{
 
                 usersRef.child(sesion.id!!).removeValue()
-                val snack = Snackbar.make(it,"Caso clinico eliminado con exito", Snackbar.LENGTH_LONG)
-                snack.show()
+
 
             }
             btnEditSesion.setOnClickListener{
@@ -119,6 +118,7 @@ class SesionesActivity : AppCompatActivity() {
     private lateinit var etSesion: EditText
     private lateinit var etFechaSesion: EditText
     private lateinit var etDescripcion: EditText
+    private lateinit var etActividades: EditText
 
 
     private lateinit var btnAddButton: Button
@@ -134,6 +134,7 @@ class SesionesActivity : AppCompatActivity() {
         etSesion = findViewById(R.id.sesion_numero_text)
         etFechaSesion = findViewById(R.id.fecha_sesion_text)
         etDescripcion = findViewById(R.id.descripcion_text)
+        etActividades = findViewById(R.id.actividades_text)
         btnAddButton = findViewById(R.id.add_sesion_button)
 
 
@@ -153,7 +154,8 @@ class SesionesActivity : AppCompatActivity() {
                 etPacienteSesion.text.toString().trim(),
                 etSesion.text.toString().trim(),
                 etFechaSesion.text.toString().trim(),
-                etDescripcion.text.toString().trim()
+                etDescripcion.text.toString().trim(),
+                etActividades.text.toString().trim()
 
 
             )
@@ -163,6 +165,8 @@ class SesionesActivity : AppCompatActivity() {
             etSesion.setText("")
             etFechaSesion.setText("")
             etDescripcion.setText("")
+            etActividades.setText("")
+
 
         }
 
@@ -197,6 +201,7 @@ class SesionesActivity : AppCompatActivity() {
                 currentSesion?.sesion = sesC!!.sesion
                 currentSesion?.fecha = sesC!!.fecha
                 currentSesion?.descripcion = sesC!!.descripcion
+                currentSesion?.actividades = sesC!!.actividades
 
                 rv.adapter?.notifyDataSetChanged()
 

@@ -20,13 +20,13 @@ class NotasFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sesiones_contenido, container, false)
+        return inflater.inflate(R.layout.fragment_notas, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
 
-        frag_sesiones_text.text= "notas fragment baby"
+
     }
 
 }

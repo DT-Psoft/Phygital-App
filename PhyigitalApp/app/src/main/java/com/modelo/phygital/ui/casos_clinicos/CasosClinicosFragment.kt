@@ -49,16 +49,11 @@ class DemoAdapterClinica(private val casos: ArrayList<CasoClinico>) : RecyclerVi
         private var btnDelete: ImageButton
         private var btnEdit: ImageButton
 
-
-
         init {
             tvPinPaciente = view.findViewById(R.id.paciente_pin)
             tvPadenciaPaciente = view.findViewById(R.id.padencia_paciente)
             btnDelete = view.findViewById(R.id.delete_caso_button)
             btnEdit = view.findViewById(R.id.edit_caso_button)
-
-
-
 
         }
 
