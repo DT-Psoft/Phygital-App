@@ -11,7 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".SesionesActivity"></activity>
+        <activity android:name=".AddCasosClinicos"></activity>
+        <activity android:name=".AddPacientes" />
+        <activity android:name=".SesionesActivity" />
         <activity
             android:name=".MenuPrincipal"
             android:label="@string/title_activity_menu_principal" />

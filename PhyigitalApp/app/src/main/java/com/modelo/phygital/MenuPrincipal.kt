@@ -1,5 +1,6 @@
 package com.modelo.phygital
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -11,7 +12,10 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
-
+import android.view.MenuItem
+import androidx.core.view.isVisible
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.modelo.phygital.ui.casos_clinicos.CasosClinicosFragment
 
 
 class MenuPrincipal : AppCompatActivity() {
@@ -33,11 +37,40 @@ class MenuPrincipal : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+                R.id.nav_pacientes, R.id.nav_gallery, R.id.nav_casoClinico
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+
+     fun onNavigationItemSelected(menu: MenuItem): Boolean {
+
+        menu.isChecked = true
+        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
+        val fab: FloatingActionButton = findViewById(R.id.fab)
+        drawerLayout.closeDrawers()
+        //Log.d("Hola", menu.itemId.toString())
+        fab.isVisible = true
+        fab.isClickable = true
+        when (menu.itemId) {
+
+
+            R.id.nav_pacientes -> {
+                val intent = Intent(this, AddPacientes::class.java)
+                startActivity(intent)
+                finish()
+            }
+
+            R.id.nav_casoClinico -> {
+
+                val intent = Intent(this, AddCasosClinicos::class.java)
+                startActivity(intent)
+                finish()
+            }
+        }
+
+        return true
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
