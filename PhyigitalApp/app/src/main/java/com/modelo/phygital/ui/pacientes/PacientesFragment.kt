@@ -39,7 +39,7 @@ data class User(var firstName: String = "", var lastName: String = "", var age: 
 }
 
 
-private lateinit var rv: RecyclerView
+//private lateinit var rv: RecyclerView
 
 
 
@@ -51,7 +51,7 @@ class HomeFragment : Fragment() {
     private lateinit var etFirstName : EditText
     private lateinit var etLastName : EditText
     private lateinit var etAge : EditText
-    private lateinit var etState: EditText
+   // private lateinit var etState: EditText
     private lateinit var btnAddButton : Button
 
     private var users : ArrayList<User> = arrayListOf()
@@ -68,16 +68,23 @@ class HomeFragment : Fragment() {
         etFirstName = root.findViewById(R.id.frame_text)
         etLastName = root.findViewById(R.id.lname_text)
         etAge = root.findViewById(R.id.age_text)
-        etState = root.findViewById(R.id.state_text)
+     //   etState = root.findViewById(R.id.state_text)
         btnAddButton = root.findViewById(R.id.add_button)
 
        // val ly = view!!.findViewById(R.id.ly) as LinearLayout
 
         //layoutname = root2.findViewById(R.id.layout_name)
 
-        rv = root.findViewById(R.id.rv_paciente) as RecyclerView
-        rv.layoutManager = LinearLayoutManager(activity)
-        rv.adapter = DemoAdapterPaciente(users)
+//        rv = root.findViewById(R.id.rv_paciente) as RecyclerView
+//        rv.layoutManager = LinearLayoutManager(activity)
+//        rv.adapter = DemoAdapterPaciente(users)
+
+        var rv = root.findViewById<RecyclerView>(R.id.rv_paciente).apply {
+            setHasFixedSize(true)
+            layoutManager = LinearLayoutManager(this@HomeFragment.context)
+            adapter = DemoAdapterPaciente(users)
+        }
+        return view
 
         btnAddButton.setOnClickListener{
 
@@ -86,15 +93,15 @@ class HomeFragment : Fragment() {
             val user = User(
                 etFirstName.text.toString().trim(),
                 etLastName.text.toString().trim(),
-                etAge.text.toString().toInt(),
-                etState.text.toString().trim()
+                etAge.text.toString().toInt()
+      //          etState.text.toString().trim()
             )
            usersRef.push().setValue(user)
 
             etFirstName.setText("")
             etLastName.setText("")
             etAge.setText("")
-            etState.setText("")
+   //         etState.setText("")
 
         }
 
@@ -126,7 +133,7 @@ class HomeFragment : Fragment() {
                 currentUser?.firstName = user!!.firstName
                 currentUser?.lastName = user!!.lastName
                 currentUser?.age = user!!.age
-                currentUser?.state = user!!.state
+     //           currentUser?.state = user!!.state
                 rv.adapter?.notifyDataSetChanged()
 
             }
