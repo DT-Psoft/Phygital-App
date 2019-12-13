@@ -16,7 +16,7 @@ class DemoAdapterPaciente(private val users: ArrayList<User>) : RecyclerView.Ada
     class DemoViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         private var tvFullName: TextView
         private var tvAge: TextView
-        private var tvState: TextView
+     //   private var tvState: TextView
         private var btnDelete: ImageButton
         private var btnEdit: ImageButton
 
@@ -24,7 +24,7 @@ class DemoAdapterPaciente(private val users: ArrayList<User>) : RecyclerView.Ada
         init {
             tvFullName = view.findViewById(R.id.full_name)
             tvAge = view.findViewById(R.id.age)
-            tvState = view.findViewById(R.id.state)
+         //   tvState = view.findViewById(R.id.state)
             btnDelete = view.findViewById(R.id.delete_button)
             btnEdit = view.findViewById(R.id.edit_button)
 
@@ -35,7 +35,7 @@ class DemoAdapterPaciente(private val users: ArrayList<User>) : RecyclerView.Ada
         public fun bind(user: User) {
             tvFullName.setText("${user.lastName}, ${user.firstName}")
             tvAge.setText("${user.age}")
-            tvState.setText("${user.state}")
+        //    tvState.setText("${user.state}")
             val database = FirebaseDatabase.getInstance()
             val usersRef = database.getReference("app").child("users")
 

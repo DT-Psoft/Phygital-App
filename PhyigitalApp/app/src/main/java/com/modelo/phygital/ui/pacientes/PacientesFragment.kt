@@ -39,7 +39,7 @@ data class User(var firstName: String = "", var lastName: String = "", var age: 
 }
 
 
-//private lateinit var rv: RecyclerView
+private lateinit var rv: RecyclerView
 
 
 
@@ -48,11 +48,7 @@ class HomeFragment : Fragment() {
     private lateinit var pacientesViewModel: PacientesViewModel
     private lateinit var layoutname: LinearLayout
 
-    private lateinit var etFirstName : EditText
-    private lateinit var etLastName : EditText
-    private lateinit var etAge : EditText
-   // private lateinit var etState: EditText
-    private lateinit var btnAddButton : Button
+
 
     private var users : ArrayList<User> = arrayListOf()
 
@@ -63,47 +59,21 @@ class HomeFragment : Fragment() {
     ): View? {
         pacientesViewModel =
             ViewModelProviders.of(this).get(PacientesViewModel::class.java)
-        val root = inflater.inflate(R.layout.activity_add_pacientes, container, false)
+        val root = inflater.inflate(R.layout.fragment_pacientes, container, false)
 
-        etFirstName = root.findViewById(R.id.frame_text)
-        etLastName = root.findViewById(R.id.lname_text)
-        etAge = root.findViewById(R.id.age_text)
-     //   etState = root.findViewById(R.id.state_text)
-        btnAddButton = root.findViewById(R.id.add_button)
+
 
        // val ly = view!!.findViewById(R.id.ly) as LinearLayout
 
         //layoutname = root2.findViewById(R.id.layout_name)
 
-//        rv = root.findViewById(R.id.rv_paciente) as RecyclerView
-//        rv.layoutManager = LinearLayoutManager(activity)
-//        rv.adapter = DemoAdapterPaciente(users)
+        rv = root.findViewById(R.id.rv_paciente) as RecyclerView
+        rv.layoutManager = LinearLayoutManager(activity)
+        rv.adapter = DemoAdapterPaciente(users)
 
-        var rv = root.findViewById<RecyclerView>(R.id.rv_paciente).apply {
-            setHasFixedSize(true)
-            layoutManager = LinearLayoutManager(this@HomeFragment.context)
-            adapter = DemoAdapterPaciente(users)
-        }
-        return view
 
-        btnAddButton.setOnClickListener{
 
-            val database = FirebaseDatabase.getInstance()
-            val usersRef = database.getReference("app").child("users")
-            val user = User(
-                etFirstName.text.toString().trim(),
-                etLastName.text.toString().trim(),
-                etAge.text.toString().toInt()
-      //          etState.text.toString().trim()
-            )
-           usersRef.push().setValue(user)
 
-            etFirstName.setText("")
-            etLastName.setText("")
-            etAge.setText("")
-   //         etState.setText("")
-
-        }
 
         val database = FirebaseDatabase.getInstance()
         val usersRef = database.getReference("app").child("users")

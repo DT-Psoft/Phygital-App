@@ -36,7 +36,7 @@ class MenuPrincipal : AppCompatActivity() {
 
         val fab: FloatingActionButton = findViewById(R.id.fab)
         fab.setOnClickListener {
-            val intent = Intent(this, AddCasosClinicos::class.java)
+            val intent = Intent(this, AddPacientes::class.java)
             startActivity(intent)
             finish()
         }
