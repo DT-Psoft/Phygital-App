@@ -8,5 +8,14 @@
     <color name="ErrorColor">#F80008</color>
     <color name="whiteColor">#ffffff</color>
 
+    <color name="colorPrimary1">#008577</color>
+    <color name="colorPrimaryDark1">#00574B</color>
+    <color name="colorAccent1">#D81B60</color>
+    <color name="black">#000000</color>
+    <!--    <color name="orange">#FDC263</color>-->
+    <color name="orange">#FFD700</color>
+    <color name="blue">#000066</color>
+    <color name="white">#FFFFFF</color>
+
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="True">@color/colorAccent</color>
 </resources>
