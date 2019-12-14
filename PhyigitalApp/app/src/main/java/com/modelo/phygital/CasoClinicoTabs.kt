@@ -25,7 +25,7 @@ class CasoClinicoTabs : AppCompatActivity() {
 
         val toolbar: Toolbar = findViewById(R.id.bar_sesiones_contenido)
 
-        setSupportActionBar(toolbar)
+         setSupportActionBar(toolbar)
 
         val adapter = MyViewPagerAdapter(supportFragmentManager)
         adapter.addFragment(SesionesFragment() , " Sesiones ")

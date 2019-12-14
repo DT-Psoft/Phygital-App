@@ -16,7 +16,7 @@
         <activity android:name=".AddPacientes" />
         <activity android:name=".SesionesActivity" />
         <activity
-            android:name=".MenuPrincipal"
+            android:name=".ChooseLoginView"
             android:label="@string/title_activity_menu_principal" />
         <activity android:name=".LoginPaciente" />
         <activity android:name=".LoginFisioterapeuta" />
@@ -24,7 +24,7 @@
             android:name=".SignUpFisio"
             android:screenOrientation="portrait" />
         <activity android:name=".CasoClinicoTabs" />
-        <activity android:name=".ChooseLoginView">
+        <activity android:name=".MenuPrincipal">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

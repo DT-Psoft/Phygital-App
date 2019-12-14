@@ -1,6 +1,7 @@
 package com.modelo.phygital.tabs
 
 
+import android.app.ActionBar
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,6 +11,8 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,6 +23,7 @@ import com.modelo.phygital.R
 import com.modelo.phygital.Sesion
 import com.modelo.phygital.SesionesActivity
 import com.modelo.phygital.ui.casos_clinicos.CasoClinico
+import kotlinx.android.synthetic.main.app_bar_menu_principal.*
 
 
 import kotlinx.android.synthetic.main.fragment_sesiones_contenido.*
@@ -104,6 +108,8 @@ class SesionesFragment : Fragment() {
 
     private var cses: ArrayList<ConSesion> = arrayListOf()
 
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -111,8 +117,15 @@ class SesionesFragment : Fragment() {
         // Inflate the layout for this fragment
         val root = inflater.inflate(R.layout.fragment_sesiones_contenido, container, false)
 
+//        val toolbar: Toolbar = root.findViewById(R.id.bar_sesiones_contenido)
 
 
+
+        //if(activity is AppCompatActivity){
+        //    (activity as AppCompatActivity).setSupportActionBar(toolbar)
+     //   }
+
+    //    (activity as AppCompatActivity).supportActionBar?.title = " hola"
 
 
         rv = root.findViewById(R.id.rv_sesiones_contenido) as RecyclerView
