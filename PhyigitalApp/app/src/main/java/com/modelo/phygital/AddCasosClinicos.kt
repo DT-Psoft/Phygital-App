@@ -27,9 +27,9 @@ class AddCasosClinicos : AppCompatActivity() {
         setContentView(R.layout.activity_add_casos_clinicos)
 
 
-        etPinPaciente = findViewById(R.id.pin_paciente_text)
-        etPacientePadencia= findViewById(R.id.padencia_inp_text)
-        btnAddButton = findViewById(R.id.add_caso_button)
+        etPinPaciente = findViewById(R.id.paciente_sesion_text)
+        etPacientePadencia= findViewById(R.id.sesion_numero_text)
+        btnAddButton = findViewById(R.id.add_sesion_button)
 
         btnAddButton.setOnClickListener {
 

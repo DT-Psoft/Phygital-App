@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.modelo.phygital.AddPacientes">
-
+    tools:context="com.modelo.phygital.AddSesion">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -17,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Agregar paciente"
+            android:text="Agregar sesion"
             android:textColor="@color/white"
             android:textSize="30dp"
             android:textStyle="normal" />
@@ -45,7 +44,7 @@
             android:layout_width="350dp"
             android:layout_height="100dp"
             android:layout_marginTop="20dp"
-            android:hint="Apellido del paciente: "
+            android:hint="Numero de sesion"
             android:maxLines="1"
             android:textColor="#000000"
             android:textColorHint="#000000" />
@@ -55,7 +54,27 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginTop="20dp"
-            android:hint="Edad del paciente:"
+            android:hint="Fecha de sesion"
+            android:maxLines="1"
+            android:textColor="#000000"
+            android:textColorHint="#000000" />
+
+        <EditText
+            android:id="@+id/descripcion_text"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:hint="Descripcion"
+            android:maxLines="1"
+            android:textColor="#000000"
+            android:textColorHint="#000000" />
+
+        <EditText
+            android:id="@+id/actividades_text"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:hint="Actividades"
             android:maxLines="1"
             android:textColor="#000000"
             android:textColorHint="#000000" />
@@ -67,6 +86,4 @@
             android:text="Button" />
 
     </LinearLayout>
-
-
 </LinearLayout>

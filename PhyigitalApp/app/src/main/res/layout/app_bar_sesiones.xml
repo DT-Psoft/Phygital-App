@@ -10,6 +10,7 @@
         android:id="@+id/bar_sesiones_contenido"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:background="#FFC107"
         android:theme="@style/AppBarOverlay" />
 
 

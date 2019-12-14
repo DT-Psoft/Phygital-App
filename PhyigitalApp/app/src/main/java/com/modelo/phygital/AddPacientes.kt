@@ -24,11 +24,11 @@ class AddPacientes : AppCompatActivity() {
         setContentView(R.layout.activity_add_pacientes)
 
 
-        etFirstName = findViewById(R.id.pin_paciente_text)
-        etLastName = findViewById(R.id.padencia_inp_text)
-        etAge = findViewById(R.id.age_text)
+        etFirstName = findViewById(R.id.paciente_sesion_text)
+        etLastName = findViewById(R.id.sesion_numero_text)
+        etAge = findViewById(R.id.fecha_sesion_text)
         //   etState = root.findViewById(R.id.state_text)
-        btnAddButton = findViewById(R.id.add_caso_button)
+        btnAddButton = findViewById(R.id.add_sesion_button)
 
 
         btnAddButton.setOnClickListener{
