@@ -34,9 +34,15 @@ class MenuPrincipal : AppCompatActivity() {
         val navView: NavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
 
-        val fab: FloatingActionButton = findViewById(R.id.fab)
-        fab.setOnClickListener {
+        val fabPaciente: FloatingActionButton = findViewById(R.id.fabP)
+        fabPaciente.setOnClickListener {
             val intent = Intent(this, AddPacientes::class.java)
+            startActivity(intent)
+            finish()
+        }
+        val fabClinico: FloatingActionButton = findViewById(R.id.fabCS)
+        fabClinico.setOnClickListener {
+            val intent = Intent(this, AddCasosClinicos::class.java)
             startActivity(intent)
             finish()
         }
@@ -56,17 +62,20 @@ class MenuPrincipal : AppCompatActivity() {
 
         menu.isChecked = true
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
-        val fab: FloatingActionButton = findViewById(R.id.fab)
+        val fabp: FloatingActionButton = findViewById(R.id.fabP)
+         val fabcs: FloatingActionButton = findViewById(R.id.fabCS)
         drawerLayout.closeDrawers()
         //Log.d("Hola", menu.itemId.toString())
-        fab.isVisible = true
-        fab.isClickable = true
+        fabp.isVisible = true
+        fabcs.isClickable = true
+
         when (menu.itemId) {
 
 
             R.id.nav_pacientes -> {
                 val intent = Intent(this, AddPacientes::class.java)
                 startActivity(intent)
+                fabcs.isClickable = false
                 finish()
             }
 
@@ -74,6 +83,7 @@ class MenuPrincipal : AppCompatActivity() {
 
                 val intent = Intent(this, AddCasosClinicos::class.java)
                 startActivity(intent)
+                fabp.isVisible = false
                 finish()
             }
         }

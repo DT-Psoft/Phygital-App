@@ -1,5 +1,6 @@
 package com.modelo.phygital
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -46,6 +47,10 @@ class AddPacientes : AppCompatActivity() {
             etLastName.setText("")
             etAge.setText("")
             //         etState.setText("")
+
+            val intent = Intent(this, MenuPrincipal::class.java)
+            startActivity(intent)
+            finish()
 
         }
     }
