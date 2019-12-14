@@ -2,6 +2,8 @@ package com.modelo.phygital
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
@@ -10,14 +12,20 @@ import com.modelo.phygital.tabs.ModelosFragment
 import com.modelo.phygital.tabs.NotasFragment
 import com.modelo.phygital.tabs.SesionesFragment
 import kotlinx.android.synthetic.main.activity_caso_clinico_tabs.*
+import kotlinx.android.synthetic.main.app_bar_sesiones.*
 
 class CasoClinicoTabs : AppCompatActivity() {
+
 
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_caso_clinico_tabs)
+
+        val toolbar: Toolbar = findViewById(R.id.bar_sesiones_contenido)
+
+        setSupportActionBar(toolbar)
 
         val adapter = MyViewPagerAdapter(supportFragmentManager)
         adapter.addFragment(SesionesFragment() , " Sesiones ")
@@ -26,6 +34,7 @@ class CasoClinicoTabs : AppCompatActivity() {
         viewPager.adapter = adapter
         tabs.setupWithViewPager(viewPager)
     }
+
 
     class MyViewPagerAdapter(manager: FragmentManager) : FragmentPagerAdapter(manager){
 
