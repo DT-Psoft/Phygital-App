@@ -11,14 +11,13 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import android.view.Menu
-import android.view.MenuItem
+import android.view.*
 import androidx.core.view.isVisible
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.modelo.phygital.ui.casos_clinicos.CasosClinicosFragment
 
 
-class MenuPrincipal : AppCompatActivity() {
+class MenuPrincipal : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
 
@@ -27,69 +26,84 @@ class MenuPrincipal : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_principal)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
 
-
-        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
-        val navView: NavigationView = findViewById(R.id.nav_view)
-        val navController = findNavController(R.id.nav_host_fragment)
 
         val fabPaciente: FloatingActionButton = findViewById(R.id.fabP)
+        val fabClinico: FloatingActionButton = findViewById(R.id.fabCS)
+
+        fabPaciente.isVisible = true
+        fabPaciente.isClickable = false
+        fabClinico.isVisible = true
+        fabClinico.isClickable = false
+
+        setSupportActionBar(toolbar)
+
         fabPaciente.setOnClickListener {
             val intent = Intent(this, AddPacientes::class.java)
             startActivity(intent)
             finish()
         }
-        val fabClinico: FloatingActionButton = findViewById(R.id.fabCS)
+
         fabClinico.setOnClickListener {
             val intent = Intent(this, AddCasosClinicos::class.java)
             startActivity(intent)
             finish()
         }
 
+
+        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
+        val navView: NavigationView = findViewById(R.id.nav_view)
+        val navController = findNavController(R.id.nav_host_fragment)
+
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_pacientes, R.id.nav_gallery, R.id.nav_casoClinico
+                R.id.nav_pacientes, R.id.nav_casoClinico
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
 
-     fun onNavigationItemSelected(menu: MenuItem): Boolean {
-
-        menu.isChecked = true
+    override fun onNavigationItemSelected(p0: MenuItem): Boolean {
+        p0.isChecked = true
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val fabp: FloatingActionButton = findViewById(R.id.fabP)
-         val fabcs: FloatingActionButton = findViewById(R.id.fabCS)
-        drawerLayout.closeDrawers()
-        //Log.d("Hola", menu.itemId.toString())
+        val fabcs: FloatingActionButton = findViewById(R.id.fabCS)
+     //   drawerLayout.closeDrawers()
+
         fabp.isVisible = true
+        fabp.isClickable = true
+        fabcs.isVisible = true
         fabcs.isClickable = true
 
-        when (menu.itemId) {
-
+        when (p0.itemId) {
 
             R.id.nav_pacientes -> {
+                fabcs.isVisible = false
+                fabcs.isClickable = false
                 val intent = Intent(this, AddPacientes::class.java)
                 startActivity(intent)
-                fabcs.isClickable = false
                 finish()
+
             }
 
             R.id.nav_casoClinico -> {
-
+                fabp.isVisible = false
+                fabp.isClickable = false
                 val intent = Intent(this, AddCasosClinicos::class.java)
                 startActivity(intent)
-                fabp.isVisible = false
+
                 finish()
             }
         }
 
         return true
     }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
