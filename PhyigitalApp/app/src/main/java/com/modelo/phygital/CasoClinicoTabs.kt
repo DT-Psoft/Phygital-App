@@ -5,12 +5,15 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import androidx.navigation.ui.AppBarConfiguration
 import com.modelo.phygital.tabs.ModelosFragment
 import com.modelo.phygital.tabs.NotasFragment
 import com.modelo.phygital.tabs.SesionesFragment
 import kotlinx.android.synthetic.main.activity_caso_clinico_tabs.*
 
 class CasoClinicoTabs : AppCompatActivity() {
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
