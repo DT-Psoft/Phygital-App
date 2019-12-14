@@ -10,85 +10,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp">
+            android:layout_gravity="center"
+            android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/paciente_sesion_text"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="40"
-                android:hint="Paciente:"
-                android:imeOptions="actionNext"
-                android:inputType="textCapWords"
-                android:nextFocusForward="@id/sesion_numero_text" />
-            <EditText
-                android:id="@+id/sesion_numero_text"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="30"
-                android:hint="Sesion:"
-                android:imeOptions="actionNext"
-                android:inputType="textCapWords"
-                android:nextFocusForward="@id/sesion_numero_text" />
 
-            <EditText
-                android:id="@+id/fecha_sesion_text"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="30"
-                android:hint="Fecha:"
-                android:imeOptions="actionNext"
-                android:inputType="textCapWords"
-                android:nextFocusForward="@id/descripcion_text"/>
+            <Button
+                android:id="@+id/add_sesion_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center|fill_vertical"
+                android:text="ADD" />/>
+
         </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp">
-
-        <EditText
-            android:id="@+id/descripcion_text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="30"
-            android:hint="Descripcion:"
-            android:imeOptions="actionNext"
-            android:inputType="textCapWords"
-            android:nextFocusForward="@id/actividades_text"/>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp">
-
-
-        <EditText
-            android:id="@+id/actividades_text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="30"
-            android:hint="Actividades:"
-            android:imeOptions="actionNext"
-            android:inputType="textCapWords"
-            android:nextFocusForward="@id/add_sesion_button"/>
-
-        <Button
-            android:id="@+id/add_sesion_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ADD" />/>
-
-    </LinearLayout>
 
 
 

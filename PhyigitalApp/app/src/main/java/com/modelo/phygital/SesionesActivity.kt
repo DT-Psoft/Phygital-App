@@ -41,84 +41,14 @@ data class Sesion(var paciente: String = "", var sesion: String = "", var fecha:
 
 }
 
-class DemoAdapterSesion(private val sesiones: ArrayList<Sesion>) : RecyclerView.Adapter<DemoAdapterSesion.DemoViewHolder>() {
 
-
-    class DemoViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-        private var tvPacienteSesion: TextView
-        private var tvSesion: TextView
-        private var tvFechaSesion: TextView
-       // private var tvDescripcion: TextView
-        private var btnDeleteSesion: ImageButton
-        private var btnEditSesion: ImageButton
-
-
-
-        init {
-            tvPacienteSesion = view.findViewById(R.id.paciente_sesion_tv)
-            tvSesion = view.findViewById(R.id.sesion_tv)
-            tvFechaSesion = view.findViewById(R.id.fecha_tv)
-           // tvDescripcion= view.findViewById(R.id.descripcion_tv)
-            btnDeleteSesion = view.findViewById(R.id.delete_sesion_button)
-            btnEditSesion = view.findViewById(R.id.edit_sesion_button)
-        }
-
-        public fun bind(sesion: Sesion) {
-
-            tvPacienteSesion.setText("${sesion.paciente}")
-            tvSesion.setText("${sesion.sesion}")
-            tvFechaSesion.setText("${sesion.fecha}")
-          //  tvDescripcion.setText("${sesion.descripcion}")
-            val database = FirebaseDatabase.getInstance()
-            val usersRef = database.getReference("app").child("sesionClinica")
-
-            btnDeleteSesion.setOnClickListener{
-
-                usersRef.child(sesion.id!!).removeValue()
-
-
-            }
-            btnEditSesion.setOnClickListener{
-                val intent = Intent(view.context,CasoClinicoTabs::class.java)
-
-                // Also like this
-                ContextCompat.startActivity(view.context, intent, null)
-
-            }
-
-
-        }
-    }
-
-
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): DemoAdapterSesion.DemoViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.rv_demo_holder_sesiones, parent, false) as View
-
-
-        return DemoAdapterSesion.DemoViewHolder(view)
-    }
-
-    override fun getItemCount() = sesiones.size
-    override fun onBindViewHolder(holder: DemoViewHolder, position: Int) {
-        holder.bind(sesiones[position])
-    }
-
-}
 private lateinit var rv: RecyclerView
 
 class SesionesActivity : AppCompatActivity() {
 
 
 
-    private lateinit var etPacienteSesion: EditText
-    private lateinit var etSesion: EditText
-    private lateinit var etFechaSesion: EditText
-    private lateinit var etDescripcion: EditText
-    private lateinit var etActividades: EditText
+
 
 
     private lateinit var btnAddButton: Button
@@ -130,11 +60,7 @@ class SesionesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sesiones)
 
-        etPacienteSesion = findViewById(R.id.paciente_sesion_text)
-        etSesion = findViewById(R.id.sesion_numero_text)
-        etFechaSesion = findViewById(R.id.fecha_sesion_text)
-        etDescripcion = findViewById(R.id.descripcion_text)
-        etActividades = findViewById(R.id.actividades_text)
+
         btnAddButton = findViewById(R.id.add_sesion_button)
 
 
@@ -143,30 +69,15 @@ class SesionesActivity : AppCompatActivity() {
         rv = findViewById<RecyclerView>(R.id.rv_sesiones).apply {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(this@SesionesActivity)
-            adapter = DemoAdapterSesion(sesiones)
+            adapter = DemoAdapterAddSesion(sesiones)
         }
 
         btnAddButton.setOnClickListener {
 
-            val database = FirebaseDatabase.getInstance()
-            val usersRef = database.getReference("app").child("sesionClinica")
-            val sesion = Sesion(
-                etPacienteSesion.text.toString().trim(),
-                etSesion.text.toString().trim(),
-                etFechaSesion.text.toString().trim(),
-                etDescripcion.text.toString().trim(),
-                etActividades.text.toString().trim()
 
-
-            )
-            usersRef.push().setValue(sesion)
-
-            etPacienteSesion.setText("")
-            etSesion.setText("")
-            etFechaSesion.setText("")
-            etDescripcion.setText("")
-            etActividades.setText("")
-
+            val intent = Intent(this, AddSesion::class.java)
+            startActivity(intent)
+            finish()
 
         }
 
