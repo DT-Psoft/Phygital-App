@@ -17,7 +17,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.modelo.phygital.ui.casos_clinicos.CasoClinico
 import com.modelo.phygital.ui.casos_clinicos.CasosClinicosViewModel
-import com.modelo.phygital.ui.casos_clinicos.DemoAdapterClinica
+
 
 
 

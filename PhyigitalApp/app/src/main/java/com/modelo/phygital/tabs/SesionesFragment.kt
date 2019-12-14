@@ -20,7 +20,7 @@ import com.modelo.phygital.R
 import com.modelo.phygital.Sesion
 import com.modelo.phygital.SesionesActivity
 import com.modelo.phygital.ui.casos_clinicos.CasoClinico
-import com.modelo.phygital.ui.casos_clinicos.DemoAdapterClinica
+
 
 import kotlinx.android.synthetic.main.fragment_sesiones_contenido.*
 

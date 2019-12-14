@@ -31,7 +31,7 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/frame_text"
+            android:id="@+id/pin_paciente_text"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
@@ -41,7 +41,7 @@
             android:textColorHint="#000000" />
 
         <EditText
-            android:id="@+id/lname_text"
+            android:id="@+id/padencia_inp_text"
             android:layout_width="350dp"
             android:layout_height="100dp"
             android:layout_marginTop="20dp"
@@ -61,7 +61,7 @@
             android:textColorHint="#000000" />
 
         <Button
-            android:id="@+id/add_button"
+            android:id="@+id/add_caso_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Button" />
