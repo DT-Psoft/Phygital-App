@@ -14,7 +14,8 @@ import androidx.appcompat.widget.Toolbar
 import android.view.*
 import androidx.core.view.isVisible
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.modelo.phygital.ui.casos_clinicos.CasosClinicosFragment
+import com.modelo.phygital.AddActivities.AddCasosClinicos
+import com.modelo.phygital.AddActivities.AddPacientes
 
 
 class MenuPrincipal : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {

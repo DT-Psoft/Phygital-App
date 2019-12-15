@@ -1,4 +1,4 @@
-package com.modelo.phygital
+package com.modelo.phygital.DemoAdapters
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -10,6 +10,8 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.FirebaseDatabase
+import com.modelo.phygital.R
+import com.modelo.phygital.SesionesActivity
 import com.modelo.phygital.ui.casos_clinicos.CasoClinico
 
 class DemoAdapterClinica(private val casos: ArrayList<CasoClinico>) : RecyclerView.Adapter<DemoAdapterClinica.DemoViewHolder>() {
@@ -44,7 +46,8 @@ class DemoAdapterClinica(private val casos: ArrayList<CasoClinico>) : RecyclerVi
 
             }
             btnEdit.setOnClickListener{
-                val intent = Intent(view.context,SesionesActivity::class.java)
+                val intent = Intent(view.context,
+                    SesionesActivity::class.java)
 
                 // Also like this
                 ContextCompat.startActivity(view.context, intent, null)
@@ -64,7 +67,9 @@ class DemoAdapterClinica(private val casos: ArrayList<CasoClinico>) : RecyclerVi
             .inflate(R.layout.rv_demo_holder_casos_clinicos, parent, false) as View
 
 
-        return DemoViewHolder(view)
+        return DemoViewHolder(
+            view
+        )
     }
 
     override fun onBindViewHolder(holder: DemoViewHolder, position: Int) {

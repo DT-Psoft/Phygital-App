@@ -11,9 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".AddSesion"></activity>
-        <activity android:name=".AddCasosClinicos" />
-        <activity android:name=".AddPacientes" />
+        <activity android:name=".AddActivities.AddSesion"></activity>
+        <activity android:name=".AddActivities.AddCasosClinicos" />
+        <activity android:name=".AddActivities.AddPacientes" />
+        <activity android:name=".AddActivities.AddNotas" />
         <activity android:name=".SesionesActivity" />
         <activity
             android:name=".ChooseLoginView"

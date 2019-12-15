@@ -10,15 +10,14 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.modelo.phygital.R
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
-import com.modelo.phygital.DemoAdapterPaciente
+import com.modelo.phygital.DemoAdapters.DemoAdapterPaciente
 
 
-data class User(var firstName: String = "", var lastName: String = "", var age: Int = 0, var state: String = "") {
+data class User(var firstName: String = "", var lastName: String = "", var age: Int = 0, var state: String = "", var pin: String ="") {
     var id: String? = null
 
     override fun equals(other: Any?): Boolean {
@@ -103,7 +102,8 @@ class HomeFragment : Fragment() {
                 currentUser?.firstName = user!!.firstName
                 currentUser?.lastName = user!!.lastName
                 currentUser?.age = user!!.age
-     //           currentUser?.state = user!!.state
+                currentUser?.state = user!!.state
+                currentUser?.pin = user!!.pin
                 rv.adapter?.notifyDataSetChanged()
 
             }

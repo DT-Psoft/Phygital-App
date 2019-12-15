@@ -1,4 +1,4 @@
-package com.modelo.phygital
+package com.modelo.phygital.DemoAdapters
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -9,6 +9,9 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.FirebaseDatabase
+import com.modelo.phygital.CasoClinicoTabs
+import com.modelo.phygital.R
+import com.modelo.phygital.Sesion
 
 class DemoAdapterAddSesion(private val sesiones: ArrayList<Sesion>) : RecyclerView.Adapter<DemoAdapterAddSesion.DemoViewHolder>() {
 
@@ -48,7 +51,8 @@ class DemoAdapterAddSesion(private val sesiones: ArrayList<Sesion>) : RecyclerVi
 
             }
             btnEditSesion.setOnClickListener{
-                val intent = Intent(view.context,CasoClinicoTabs::class.java)
+                val intent = Intent(view.context,
+                    CasoClinicoTabs::class.java)
 
                 // Also like this
                 ContextCompat.startActivity(view.context, intent, null)
@@ -63,12 +67,14 @@ class DemoAdapterAddSesion(private val sesiones: ArrayList<Sesion>) : RecyclerVi
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): DemoAdapterAddSesion.DemoViewHolder {
+    ): DemoViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.rv_demo_holder_sesiones, parent, false) as View
 
 
-        return DemoAdapterAddSesion.DemoViewHolder(view)
+        return DemoViewHolder(
+            view
+        )
     }
 
     override fun getItemCount() = sesiones.size

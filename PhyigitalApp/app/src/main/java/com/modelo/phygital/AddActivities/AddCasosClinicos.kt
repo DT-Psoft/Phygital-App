@@ -1,4 +1,4 @@
-package com.modelo.phygital
+package com.modelo.phygital.AddActivities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
 import com.google.firebase.database.FirebaseDatabase
+import com.modelo.phygital.MenuPrincipal
+import com.modelo.phygital.R
 import com.modelo.phygital.ui.casos_clinicos.CasoClinico
 import com.modelo.phygital.ui.casos_clinicos.CasosClinicosViewModel
 
@@ -27,9 +29,9 @@ class AddCasosClinicos : AppCompatActivity() {
         setContentView(R.layout.activity_add_casos_clinicos)
 
 
-        etPinPaciente = findViewById(R.id.paciente_sesion_text)
+        etPinPaciente = findViewById(R.id.titulo_text)
         etPacientePadencia= findViewById(R.id.sesion_numero_text)
-        btnAddButton = findViewById(R.id.add_sesion_button)
+        btnAddButton = findViewById(R.id.add_button)
 
         btnAddButton.setOnClickListener {
 
@@ -51,4 +53,11 @@ class AddCasosClinicos : AppCompatActivity() {
             finish()
         }
     }
+
+    override fun onBackPressed() {
+        val intent = Intent(this, MenuPrincipal::class.java)
+        startActivity(intent)
+        finish()
+    }
 }
+

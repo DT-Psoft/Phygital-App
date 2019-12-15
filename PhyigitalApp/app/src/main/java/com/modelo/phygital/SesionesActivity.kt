@@ -3,22 +3,15 @@ package com.modelo.phygital
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.*
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
-import com.modelo.phygital.ui.casos_clinicos.CasoClinico
-import com.modelo.phygital.ui.casos_clinicos.CasosClinicosViewModel
-
-
+import com.modelo.phygital.AddActivities.AddSesion
+import com.modelo.phygital.DemoAdapters.DemoAdapterAddSesion
 
 
 data class Sesion(var paciente: String = "", var sesion: String = "", var fecha: String = "", var descripcion: String = "", var actividades: String ="") {
@@ -47,10 +40,6 @@ private lateinit var rv: RecyclerView
 class SesionesActivity : AppCompatActivity() {
 
 
-
-
-
-
     private lateinit var btnAddButton: Button
 
 
@@ -61,7 +50,7 @@ class SesionesActivity : AppCompatActivity() {
         setContentView(R.layout.activity_sesiones)
 
 
-        btnAddButton = findViewById(R.id.add_sesion_button)
+        btnAddButton = findViewById(R.id.add_button)
 
 
 
@@ -69,7 +58,8 @@ class SesionesActivity : AppCompatActivity() {
         rv = findViewById<RecyclerView>(R.id.rv_sesiones).apply {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(this@SesionesActivity)
-            adapter = DemoAdapterAddSesion(sesiones)
+            adapter =
+                DemoAdapterAddSesion(sesiones)
         }
 
         btnAddButton.setOnClickListener {

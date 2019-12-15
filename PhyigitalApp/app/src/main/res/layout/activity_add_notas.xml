@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Agregar sesion"
+            android:text="Agregar nota"
             android:textColor="@color/white"
             android:textSize="30dp"
             android:textStyle="normal" />
@@ -34,27 +34,7 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:hint="Nombre del paciente:"
-            android:maxLines="1"
-            android:textColor="#000000"
-            android:textColorHint="#000000" />
-
-        <EditText
-            android:id="@+id/sesion_numero_text"
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="20dp"
-            android:hint="Numero de sesion"
-            android:maxLines="1"
-            android:textColor="#000000"
-            android:textColorHint="#000000" />
-
-        <EditText
-            android:id="@+id/fecha_sesion_text"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="20dp"
-            android:hint="Fecha de sesion"
+            android:hint="Titulo nota"
             android:maxLines="1"
             android:textColor="#000000"
             android:textColorHint="#000000" />
@@ -65,16 +45,6 @@
             android:layout_height="100dp"
             android:layout_marginTop="20dp"
             android:hint="Descripcion"
-            android:maxLines="1"
-            android:textColor="#000000"
-            android:textColorHint="#000000" />
-
-        <EditText
-            android:id="@+id/actividades_text"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="20dp"
-            android:hint="Actividades"
             android:maxLines="1"
             android:textColor="#000000"
             android:textColorHint="#000000" />

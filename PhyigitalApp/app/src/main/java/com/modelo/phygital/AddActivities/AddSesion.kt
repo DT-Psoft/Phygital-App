@@ -1,4 +1,4 @@
-package com.modelo.phygital
+package com.modelo.phygital.AddActivities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import com.google.firebase.database.FirebaseDatabase
+import com.modelo.phygital.R
+import com.modelo.phygital.Sesion
+import com.modelo.phygital.SesionesActivity
 
 class AddSesion : AppCompatActivity() {
 
@@ -24,12 +27,12 @@ class AddSesion : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_sesion)
 
-        etPacienteSesion = findViewById(R.id.paciente_sesion_text)
+        etPacienteSesion = findViewById(R.id.titulo_text)
         etSesion = findViewById(R.id.sesion_numero_text)
         etFechaSesion = findViewById(R.id.fecha_sesion_text)
         etDescripcion = findViewById(R.id.descripcion_text)
         etActividades = findViewById(R.id.actividades_text)
-        btnAddButton = findViewById(R.id.add_sesion_button)
+        btnAddButton = findViewById(R.id.add_button)
 
 
 

@@ -14,8 +14,7 @@
         android:background="#3F51B5"
         app:tabGravity="fill"
         app:tabMode="fixed" />
-    <include
-    layout="@layout/app_bar_sesiones" />
+
 
 
     <androidx.viewpager.widget.ViewPager

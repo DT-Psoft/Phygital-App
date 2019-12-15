@@ -1,4 +1,4 @@
-package com.modelo.phygital
+package com.modelo.phygital.DemoAdapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.FirebaseDatabase
+import com.modelo.phygital.R
 import com.modelo.phygital.ui.pacientes.User
 
 class DemoAdapterPaciente(private val users: ArrayList<User>) : RecyclerView.Adapter<DemoAdapterPaciente.DemoViewHolder>() {
@@ -16,7 +17,8 @@ class DemoAdapterPaciente(private val users: ArrayList<User>) : RecyclerView.Ada
     class DemoViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         private var tvFullName: TextView
         private var tvAge: TextView
-     //   private var tvState: TextView
+        private var tvState: TextView
+        private var tvPin: TextView
         private var btnDelete: ImageButton
         private var btnEdit: ImageButton
 
@@ -24,7 +26,8 @@ class DemoAdapterPaciente(private val users: ArrayList<User>) : RecyclerView.Ada
         init {
             tvFullName = view.findViewById(R.id.full_name)
             tvAge = view.findViewById(R.id.age)
-         //   tvState = view.findViewById(R.id.state)
+            tvState = view.findViewById(R.id.state)
+            tvPin = view.findViewById(R.id.pin_paciente)
             btnDelete = view.findViewById(R.id.delete_button)
             btnEdit = view.findViewById(R.id.edit_button)
 
@@ -33,9 +36,14 @@ class DemoAdapterPaciente(private val users: ArrayList<User>) : RecyclerView.Ada
         }
 
         public fun bind(user: User) {
+
+            var rnds = (0..1000000).random()
+            var state = "activo"
+            tvState.setText("${user.state}")
             tvFullName.setText("${user.lastName}, ${user.firstName}")
             tvAge.setText("${user.age}")
-        //    tvState.setText("${user.state}")
+            tvState.setText("${user.state}")
+            tvPin.setText("${user.pin}")
             val database = FirebaseDatabase.getInstance()
             val usersRef = database.getReference("app").child("users")
 
@@ -65,7 +73,9 @@ class DemoAdapterPaciente(private val users: ArrayList<User>) : RecyclerView.Ada
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.rv_demo_holder_paciente, parent, false) as View
 
-        return DemoViewHolder(view)
+        return DemoViewHolder(
+            view
+        )
     }
 
     override fun onBindViewHolder(holder: DemoViewHolder, position: Int) {

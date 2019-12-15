@@ -1,24 +1,19 @@
 package com.modelo.phygital.ui.casos_clinicos
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
-import com.modelo.phygital.CasoClinicoTabs
-import com.modelo.phygital.DemoAdapterClinica
+import com.modelo.phygital.DemoAdapters.DemoAdapterClinica
 import com.modelo.phygital.R
-import com.modelo.phygital.SesionesActivity
 
 
 data class CasoClinico(var pin: String = "", var padencia: String = "") {
