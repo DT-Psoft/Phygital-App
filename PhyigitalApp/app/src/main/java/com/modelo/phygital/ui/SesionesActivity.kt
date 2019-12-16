@@ -1,4 +1,4 @@
-package com.modelo.phygital
+package com.modelo.phygital.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +12,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.modelo.phygital.AddActivities.AddSesion
 import com.modelo.phygital.DemoAdapters.DemoAdapterAddSesion
+import com.modelo.phygital.R
 
 
 data class Sesion(var paciente: String = "", var sesion: String = "", var fecha: String = "", var descripcion: String = "", var actividades: String ="") {
@@ -78,7 +79,8 @@ class SesionesActivity : AppCompatActivity() {
         usersRef.addChildEventListener(object : ChildEventListener {
 
             override fun onChildRemoved(p0: DataSnapshot) {
-                val sesC: Sesion? = p0.getValue(Sesion::class.java)
+                val sesC: Sesion? = p0.getValue(
+                    Sesion::class.java)
                 sesC?.id = p0.key
 
                 sesiones.remove(sesC!!)
@@ -86,7 +88,8 @@ class SesionesActivity : AppCompatActivity() {
             }
 
             override fun onChildAdded(p0: DataSnapshot, p1: String?) {
-                val sesC: Sesion? = p0.getValue(Sesion::class.java)
+                val sesC: Sesion? = p0.getValue(
+                    Sesion::class.java)
                 sesC?.id = p0.key
 
                 sesiones.add(sesC!!)
@@ -95,7 +98,8 @@ class SesionesActivity : AppCompatActivity() {
             }
 
             override fun onChildChanged(p0: DataSnapshot, p1: String?) {
-                val sesC: Sesion? = p0.getValue(Sesion::class.java)
+                val sesC: Sesion? = p0.getValue(
+                    Sesion::class.java)
                 sesC?.id = p0.key
                 val currentSesion: Sesion? = sesiones.get(sesiones.indexOf(sesC))
                 currentSesion?.paciente = sesC!!.paciente

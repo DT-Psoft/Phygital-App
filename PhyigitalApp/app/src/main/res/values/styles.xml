@@ -1,30 +1,26 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/myColorPrimary</item>
+        <item name="colorPrimaryDark">@color/myColorPrimaryDark</item>
+        <item name="colorAccent">@color/myColorAccent</item>
     </style>
 
     <style name="NoActionBar" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="buttonStyle">@style/buttonLightStyle</item>
-        <item name="buttonBarButtonStyle">@style/buttonLightStyle</item>
-        <item name="buttonBarStyle">@style/buttonLightStyle</item>
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/myColorPrimary</item>
+        <item name="colorPrimaryDark">@color/myColorPrimaryDark</item>
+        <item name="colorAccent">@color/myColorAccent</item>
     </style>
 
     <style name="AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
 
     <style name="PopupOverlay" parent="Theme.MaterialComponents.Light" />
 
-
+    <!-- ESTILOS DE TEXTOS Y COLORES TEXT INPUT LAYOUT -->
+    <!--estilo del contador de caracteres de algun InputText -->
     <style name="CounterTextStyle" parent="@android:style/TextAppearance">
-        <item name="android:textColor">@color/TipColor</item>
         <item name="android:textSize">12sp</item>
     </style>
 
@@ -32,51 +28,66 @@
         <item name="android:textSize">12sp</item>
     </style>
 
-    <style name="HintTextStyle" parent="@android:style/TextAppearance">
-        <item name="android:textSize">12sp</item>
-    </style>
 
-    <style name="TextSyle" parent="@android:style/TextAppearance">
-        <item name="android:textSize">16sp</item>
-        <item name="android:textColor">@color/whiteColor</item>
-    </style>
-
-    <style name="CustomInputTextLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="counterTextAppearance">@style/CounterTextStyle</item>
-        <item name="passwordToggleTint">@color/colorAccent</item>
-        <item name="android:textColorHint">@color/colorAccent</item>
-        <item name="hintTextAppearance">@style/HintTextStyle</item>
-        <item name="helperTextTextAppearance">@style/CounterTextStyle</item>
-        <item name="boxStrokeColor">#fff</item>
-        <item name="android:textAppearance">@style/TextSyle</item>
-    </style>
-
+    <!-- ESTILOS CLAROS       -->
     <style name="buttonLightStyle" parent="@style/Widget.MaterialComponents.Button">
         <item name="android:textColor">@color/colorPrimaryDark</item>
-        <item name="backgroundTint">@color/whiteColor</item>
+        <item name="backgroundTint">@color/white</item>
         <item name="rippleColor">@color/colorPrimaryLight</item>
     </style>
 
+    <style name="HintTextStyleLight" parent="@android:style/TextAppearance">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/myColorPrimaryLight</item>
+    </style>
+
+    <style name="CustomInputTextLayoutLight" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="counterTextAppearance">@style/CounterTextStyle</item>
+        <item name="android:textColorHint">@color/myHintTextColor</item>
+        <item name="passwordToggleTint">@color/myColorPrimaryLight</item>
+        <item name="hintTextAppearance">@style/HintTextStyleLight</item>
+        <item name="helperTextTextAppearance">@style/CounterTextStyle</item>
+        <item name="boxStrokeColor">@color/myColorPrimaryLight</item>
+        <item name="android:textSize">16sp</item>
+        <item name="colorAccent">@color/colorPrimaryLight</item>
+
+        <!--        <item name="android:textColor">#000000</item>-->
+    </style>
+
+    <style name="editTextLight" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="colorAccent">@color/colorPrimaryLight</item>
+    </style>
+
+    <!-- ESTILOS OSCUROS-->
     <style name="buttonDarkStyle" parent="@style/Widget.MaterialComponents.Button">
-        <item name="android:textColor">@color/whiteColor</item>
+        <item name="android:textColor">@color/white</item>
         <item name="backgroundTint">@color/colorPrimaryDark</item>
         <item name="rippleColor">@color/colorPrimaryLight</item>
     </style>
-    <style name="buttonNoBackground" parent="@style/Widget.MaterialComponents.Button">
-        <item name="android:buttonStyle">@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored</item>
-        <item name="android:textColor">@color/whiteColor</item>
-        <item name="backgroundTint">@android:color/transparent</item>
-        <item name="rippleColor">@color/colorPrimaryLight</item>
-    </style>
-    <style name="CustomInputTextLayoutBlack" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="counterTextAppearance">@style/CounterTextStyle</item>
-        <item name="passwordToggleTint">@color/colorAccent</item>
-        <item name="android:textColorHint">@color/colorAccent</item>
-        <item name="hintTextAppearance">@style/HintTextStyle</item>
-        <item name="helperTextTextAppearance">@style/CounterTextStyle</item>
-        <item name="boxStrokeColor">#fff</item>
-        <item name="android:textAppearance">@style/TextSyle</item>
+    <!--estilo del texto del campo cuando esta por encima o arriba en el input text -->
+    <style name="HintTextStyleDark" parent="@android:style/TextAppearance">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/myColorPrimaryDark</item>
     </style>
 
+    <style name="CustomInputTextLayoutDark" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="counterTextAppearance">@style/CounterTextStyle</item>
+        <item name="android:textColorHint">@color/myHintTextColor</item>
+        <item name="passwordToggleTint">@color/myColorPrimaryDark</item>
+        <item name="hintTextAppearance">@style/HintTextStyleDark</item>
+        <item name="helperTextTextAppearance">@style/CounterTextStyle</item>
+        <item name="boxStrokeColor">@color/myColorPrimaryDark</item>
+        <item name="android:textSize">16sp</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+
+        <!--        <item name="android:textColor">#000000</item>-->
+    </style>
+
+    <style name="editTextDark" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">#131313</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+
+    </style>
 
 </resources>

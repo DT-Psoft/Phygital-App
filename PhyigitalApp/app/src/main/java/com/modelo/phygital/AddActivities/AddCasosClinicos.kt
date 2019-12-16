@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
 import com.google.firebase.database.FirebaseDatabase
-import com.modelo.phygital.MenuPrincipal
+import com.modelo.phygital.ui.MenuPrincipal
 import com.modelo.phygital.R
 import com.modelo.phygital.ui.casos_clinicos.CasoClinico
 import com.modelo.phygital.ui.casos_clinicos.CasosClinicosViewModel

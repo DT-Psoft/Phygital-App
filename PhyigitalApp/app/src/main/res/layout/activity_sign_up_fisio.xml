@@ -5,211 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_decoration_background"
-    tools:context=".SignUpFisio">
-
-    <ScrollView
-        android:id="@+id/scrollView1"
-        style="@android:style/Widget.Material.Light.ScrollView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="28dp"
-        android:orientation="vertical"
-        android:scrollbars="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_createAccount">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:id="@+id/ImageBoy1"
-                            android:layout_width="90dp"
-                            android:layout_height="90dp"
-                            android:layout_marginEnd="20dp"
-                            android:background="#E1D6C3"
-                            android:foreground="@drawable/ic_launcher_background"
-                            android:foregroundTint="#B3020202"
-                            android:src="@drawable/ic_usr_boy1" />
-
-                        <ImageView
-                            android:id="@+id/ImageWoman"
-                            android:layout_width="90dp"
-                            android:layout_height="90dp"
-                            android:layout_marginEnd="20dp"
-                            android:background="#E1D6C3"
-                            android:foreground="@drawable/ic_launcher_background"
-                            android:foregroundTint="#B3020202"
-                            android:src="@drawable/ic_usr_woman" />
-
-                        <ImageView
-                            android:id="@+id/ImageWoman1"
-                            android:layout_width="90dp"
-                            android:layout_height="90dp"
-                            android:background="#E1D6C3"
-                            android:foreground="@drawable/ic_launcher_background"
-                            android:foregroundTint="#B3020202"
-                            android:src="@drawable/ic_usr_woman1" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:id="@+id/ImageBoy2"
-                            android:layout_width="90dp"
-                            android:layout_height="90dp"
-                            android:layout_marginEnd="20dp"
-                            android:background="#E1D6C3"
-                            android:foreground="@drawable/ic_launcher_background"
-                            android:foregroundTint="#B3020202"
-                            android:src="@drawable/ic_usr_boy2" />
-
-                        <ImageView
-                            android:id="@+id/ImageBoy3"
-                            android:layout_width="90dp"
-                            android:layout_height="90dp"
-                            android:layout_marginEnd="20dp"
-                            android:background="#E1D6C3"
-                            android:foreground="@drawable/ic_launcher_background"
-                            android:foregroundTint="#B3020202"
-                            android:src="@drawable/ic_usr_boy3" />
-
-                        <ImageView
-                            android:id="@+id/ImageWoman2"
-                            android:layout_width="90dp"
-                            android:layout_height="90dp"
-                            android:background="#E1D6C3"
-                            android:foreground="@drawable/ic_launcher_background"
-                            android:foregroundTint="#B3020202"
-                            android:src="@drawable/ic_usr_woman2" />
-                    </LinearLayout>
-
-                </LinearLayout>
-            </LinearLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout_emailRegister"
-                style="@style/CustomInputTextLayoutBlack"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="48dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="48dp"
-                android:layout_marginBottom="18dp"
-                android:hint="Correo Electronico"
-                app:errorEnabled="true">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editText_emailRegister"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:textColor="#000000" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout_userNameRegister"
-                style="@style/CustomInputTextLayoutBlack"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="48dp"
-                android:layout_marginEnd="48dp"
-                android:layout_marginBottom="18dp"
-                android:hint="Nombre de Usuario"
-                app:errorEnabled="true">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editText_userNameRegister"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:textColor="#000000" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout_passwordRegister"
-                style="@style/CustomInputTextLayoutBlack"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="48dp"
-                android:layout_marginEnd="48dp"
-                android:layout_marginBottom="18dp"
-                android:hint="Contraseña"
-                app:errorEnabled="true"
-                app:helperText="Menor a 8 Digitos"
-                app:passwordToggleEnabled="true">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editText_passwordRegister"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout_confirmPasswordRegister"
-                style="@style/CustomInputTextLayoutBlack"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="48dp"
-                android:layout_marginEnd="48dp"
-                android:layout_marginBottom="10dp"
-                android:hint="Confirmar Contraseña"
-                app:errorEnabled="true"
-                app:passwordToggleEnabled="true">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editText_confirmPasswordRegister"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:textColor="#000000" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <Button
-                android:id="@+id/button_createAccount"
-                style="@style/buttonDarkStyle"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginStart="48dp"
-                android:layout_marginEnd="48dp"
-                android:layout_marginBottom="18dp"
-                android:text="Crear Cuenta"
-                android:textAllCaps="false"
-                android:textSize="18sp" />
-        </LinearLayout>
-    </ScrollView>
+    tools:context=".ui.SignUpFisio">
 
     <TextView
         android:id="@+id/textView_createAccount"
@@ -225,8 +21,237 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ScrollView
+        android:id="@+id/scrollView1"
+        style="@android:style/Widget.Material.Light.ScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="28dp"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutAlreadyAccount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_createAccount">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutUserData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/linearLayoutUserIcons"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutIconsGroup1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/ImageBoy1"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="#E1D6C3"
+                        android:contentDescription="BoyIcon1"
+                        android:foreground="@drawable/ic_launcher_background"
+                        android:foregroundTint="#B3020202"
+                        android:src="@drawable/ic_usr_boy1" />
+
+                    <ImageView
+                        android:id="@+id/ImageWoman"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="#E1D6C3"
+                        android:foreground="@drawable/ic_launcher_background"
+                        android:foregroundTint="#B3020202"
+                        android:src="@drawable/ic_usr_woman" />
+
+                    <ImageView
+                        android:id="@+id/ImageWoman1"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:background="#E1D6C3"
+                        android:foreground="@drawable/ic_launcher_background"
+                        android:foregroundTint="#B3020202"
+                        android:src="@drawable/ic_usr_woman1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutIconsGroup2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/ImageBoy2"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="#E1D6C3"
+                        android:foreground="@drawable/ic_launcher_background"
+                        android:foregroundTint="#B3020202"
+                        android:src="@drawable/ic_usr_boy2" />
+
+                    <ImageView
+                        android:id="@+id/ImageBoy3"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="#E1D6C3"
+                        android:foreground="@drawable/ic_launcher_background"
+                        android:foregroundTint="#B3020202"
+                        android:src="@drawable/ic_usr_boy3" />
+
+                    <ImageView
+                        android:id="@+id/ImageWoman2"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:background="#E1D6C3"
+                        android:foreground="@drawable/ic_launcher_background"
+                        android:foregroundTint="#B3020202"
+                        android:src="@drawable/ic_usr_woman2" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_newFisioEmail"
+                style="@style/CustomInputTextLayoutDark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="18dp"
+                android:hint="@string/email"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_newFisioEmail"
+                    style="@style/editTextDark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_newFisioFirstName"
+                style="@style/CustomInputTextLayoutDark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="18dp"
+                android:hint="@string/UserFirstName"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_newFisioFirstName"
+                    style="@style/editTextDark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords|textPersonName|textCapSentences"
+                    android:maxLength="30" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_newFisioLastName"
+                style="@style/CustomInputTextLayoutDark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="18dp"
+                android:hint="@string/UserLastName"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_newFisioLastName"
+                    style="@style/editTextDark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords|textPersonName|textCapSentences"
+                    android:maxLength="30" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_newFisioPassword"
+                style="@style/CustomInputTextLayoutDark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="18dp"
+                android:hint="@string/password"
+                app:errorEnabled="true"
+                app:helperText="Menor a 8 Digitos"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_newFisioPassword"
+                    style="@style/editTextDark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textColorHighlight="@color/colorPrimaryDark"
+                    android:colorAccent="@color/colorPrimaryDark"
+                    android:maxLength="24" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_newFisioConfirmPassword"
+                style="@style/CustomInputTextLayoutDark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/ConfirmPassword"
+                app:errorEnabled="true"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_newFisioConfirmPassword"
+                    style="@style/editTextDark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:maxLength="24" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/button_newFisioAccount"
+                style="@style/buttonDarkStyle"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="18dp"
+                android:text="@string/CreateAccount"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
+
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linearLayoutAlreadyAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
@@ -237,17 +262,17 @@
         app:layout_constraintTop_toBottomOf="@+id/scrollView1">
 
         <TextView
-            android:id="@+id/textView_AlreadyIn"
+            android:id="@+id/textView_FisioAlreadyIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:fontFamily="@font/roboto_bold"
             android:gravity="center"
-            android:text="¿Ya tienes Cuenta?"
+            android:text="@string/AlreadyAccountQ"
             android:textColor="#6B6B6B"
             android:textSize="16sp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_toLogin"
             style="?borderlessButtonStyle"
             android:layout_width="match_parent"
@@ -255,12 +280,11 @@
             android:layout_marginTop="1dp"
             android:fontFamily="sans-serif-black"
             android:gravity="center"
-            android:scrollbarThumbHorizontal="@android:color/transparent"
-            android:scrollbarThumbVertical="@android:color/transparent"
-            android:text="Inicio"
+            android:text="@string/MainView"
             android:textAllCaps="false"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            app:rippleColor="@color/colorPrimaryDark"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

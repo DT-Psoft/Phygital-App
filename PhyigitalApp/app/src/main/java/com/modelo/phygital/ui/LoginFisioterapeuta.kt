@@ -1,14 +1,15 @@
-package com.modelo.phygital
+package com.modelo.phygital.ui
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
-import com.modelo.phygital.Entities.UserETY
-import com.facebook.stetho.Stetho
-import com.google.android.material.textfield.TextInputEditText
-import kotlinx.android.synthetic.main.activity_login_fisioterapeuta.*
+import androidx.appcompat.app.AlertDialog
+import com.google.android.material.textfield.TextInputLayout
+import com.modelo.phygital.Class.TextValidator
+import com.modelo.phygital.R
 
 
 class LoginFisioterapeuta : AppCompatActivity() {
@@ -16,6 +17,61 @@ class LoginFisioterapeuta : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_fisioterapeuta)
+        var EMAILFLAG = false
+        var PASSWORDFLAG = false
+
+        val button_fisioLogIn: Button = findViewById(R.id.button_fisioLoginToMenu)
+
+        val button_fisioSignUp: Button = findViewById(R.id.button_fisioLoginToNewAccount)
+        button_fisioSignUp.setOnClickListener {
+
+            val intentMenu = Intent(this, SignUpFisio::class.java)
+            startActivity(intentMenu)
+        }
+
+        val textInputLayout_email: TextInputLayout =
+            findViewById(R.id.textInputLayout_fisioEmailLogin)
+        textInputLayout_email.editText!!.addTextChangedListener(object : TextValidator() {
+            override fun validate() {
+                validateEmail(textInputLayout_email)
+            }
+        })
+
+        val textInputLayout_password: TextInputLayout =
+            findViewById(R.id.textInputLayout_fisioPasswordLogin)
+        textInputLayout_password.editText!!.addTextChangedListener(object : TextValidator() {
+            override fun validate() {
+                validatePassword(textInputLayout_password)
+            }
+        })
+
+    }
+
+    override fun onBackPressed() {
+        messageAlert("Seguro que deseas salir?", "Los datos en los campos se perderan") { super.onBackPressed() }
+    }
+
+    private fun messageAlert(title: String, message: String, action: () -> Unit) {
+        AlertDialog.Builder(this)
+            .setIcon(R.drawable.ic_warning)
+            .setTitle(title)
+            .setMessage(message)
+            .setPositiveButton("Si", DialogInterface.OnClickListener { _, _ ->
+                //set what would happen when positive button is clicked
+
+                action()
+            })
+            .setNegativeButton("Cancelar", DialogInterface.OnClickListener { _, _ ->
+                //set what should happen when negative button is clicked
+
+            })
+            .show()
+
+    }
+}
+
+
+/*
 
         //this.deleteDatabase("quizzapp.db")
 
@@ -70,4 +126,4 @@ class LoginFisioterapeuta : AppCompatActivity() {
             }
         }
     }
-}
+}*/

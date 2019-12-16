@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import com.google.firebase.database.FirebaseDatabase
-import com.modelo.phygital.MenuPrincipal
+import com.modelo.phygital.ui.MenuPrincipal
 import com.modelo.phygital.R
 import com.modelo.phygital.ui.pacientes.User
 

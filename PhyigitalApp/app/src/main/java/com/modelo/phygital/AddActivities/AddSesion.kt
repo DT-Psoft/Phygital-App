@@ -7,8 +7,8 @@ import android.widget.Button
 import android.widget.EditText
 import com.google.firebase.database.FirebaseDatabase
 import com.modelo.phygital.R
-import com.modelo.phygital.Sesion
-import com.modelo.phygital.SesionesActivity
+import com.modelo.phygital.ui.Sesion
+import com.modelo.phygital.ui.SesionesActivity
 
 class AddSesion : AppCompatActivity() {
 

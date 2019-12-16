@@ -15,9 +15,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.modelo.phygital.AddActivities.AddNotas
-import com.modelo.phygital.CasoClinicoTabs
 import com.modelo.phygital.DemoAdapters.DemoAdapterNota
-import com.modelo.phygital.MenuPrincipal
 import com.modelo.phygital.R
 
 

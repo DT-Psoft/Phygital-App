@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RegistroFisio</string>
+    <string name="app_name">Phygital</string>
     <string name="title_activity_menu_principal">MenuPrincipal</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -15,6 +15,17 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email">Correo Electronico</string>
+    <string name="UserFirstName">Nombre(s)</string>
+    <string name="UserLastName">Apellido(s)</string>
+    <string name="password">Contraseña</string>
+    <string name="ConfirmPassword">Confirmar Contraseña</string>
+    <string name="CreateAccount">Crear Cuenta</string>
+    <string name="AlreadyAccountQ">¿Ya tienes Cuenta?</string>
+
+    <string name="MainView">Inicio</string>
+
+    <string name="LogIn">Iniciar Sesión</string>
+    <string name="SignUp">¿No tienes cuenta? Regístrate</string>
 </resources>

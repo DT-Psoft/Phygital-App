@@ -1,4 +1,4 @@
-package com.modelo.phygital
+package com.modelo.phygital.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -16,6 +16,7 @@ import androidx.core.view.isVisible
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.modelo.phygital.AddActivities.AddCasosClinicos
 import com.modelo.phygital.AddActivities.AddPacientes
+import com.modelo.phygital.R
 
 
 class MenuPrincipal : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
@@ -61,7 +62,8 @@ class MenuPrincipal : AppCompatActivity(),NavigationView.OnNavigationItemSelecte
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_pacientes, R.id.nav_casoClinico
+                R.id.nav_pacientes,
+                R.id.nav_casoClinico
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

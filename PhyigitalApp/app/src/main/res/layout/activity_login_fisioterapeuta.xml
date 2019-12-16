@@ -5,13 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#05253C"
-    tools:context=".ChooseLoginView">
+    tools:context=".ui.ChooseLoginView">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
+
         android:background="#05253C"
         android:gravity="center"
         android:orientation="vertical"
@@ -23,67 +22,75 @@
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="242dp"
             android:layout_marginBottom="10dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/ic_adjust_black_48dp" />
+            android:src="@drawable/ic_universidad_modelo" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout_emailLogin"
-            style="@style/CustomInputTextLayout"
+            android:id="@+id/textInputLayout_fisioEmailLogin"
+            style="@style/CustomInputTextLayoutLight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
+            android:layout_marginStart="36dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="48dp"
+            android:layout_marginEnd="36dp"
             android:layout_marginBottom="18dp"
-            android:hint="Correo Electronico"
+            android:hint="@string/email"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editText_emailLogin"
+                android:id="@+id/editText_fisioEmailLogin"
+                style="@style/editTextLight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:textColor="@color/whiteColor"/>
+                android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout_passwordLogin"
-            style="@style/CustomInputTextLayout"
+            android:id="@+id/textInputLayout_fisioPasswordLogin"
+            style="@style/CustomInputTextLayoutLight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:layout_marginEnd="48dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="36dp"
             android:layout_marginBottom="18dp"
-            android:hint="Contraseña"
+            android:hint="@string/password"
             app:errorEnabled="true"
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editText_passwordLogin"
+                android:id="@+id/editText_fisioPasswordLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/editTextLight"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_login_fisioterapeuta_menu"
+            android:id="@+id/button_fisioLoginToMenu"
             style="@style/buttonLightStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginStart="36dp"
             android:layout_marginTop="10dp"
-            android:text="Iniciar Sesión" />
+            android:layout_marginEnd="36dp"
+            android:text="@string/LogIn" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_CreateNewAccount"
-            style="@style/buttonNoBackground"
+            android:id="@+id/button_fisioLoginToNewAccount"
+            style="?borderlessButtonStyle"
+            android:height="60dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="36dp"
+            android:textColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:shadowRadius="0"
-            android:text="¿No tienes cuenta? Regístrate" />
+            android:stateListAnimator="@null"
+            android:text="@string/SignUp"
+            app:rippleColor="@color/colorPrimaryLight"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

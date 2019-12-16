@@ -1,4 +1,4 @@
-package com.modelo.phygital
+package com.modelo.phygital.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.annotation.SuppressLint
 import com.facebook.stetho.Stetho
+import com.modelo.phygital.Class.AppDatabase
+import com.modelo.phygital.R
 
 class ChooseLoginView : AppCompatActivity() {
 

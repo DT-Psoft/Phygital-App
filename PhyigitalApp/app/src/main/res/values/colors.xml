@@ -3,19 +3,21 @@
     <color name="colorPrimary">#0F72DA</color>
     <color name="colorPrimaryDark">#072E70</color>
     <color name="colorAccent">#BEBEBE</color>
-    <color name="colorPrimaryLight">#5BA0F3</color>
-    <color name="TipColor">#7A7A7A</color>
-    <color name="ErrorColor">#F80008</color>
-    <color name="whiteColor">#ffffff</color>
+    <color name="colorPrimaryLight">#629FEE</color>
 
-    <color name="colorPrimary1">#008577</color>
-    <color name="colorPrimaryDark1">#00574B</color>
-    <color name="colorAccent1">#D81B60</color>
+    <color name="myColorPrimary">#3E82CF</color>
+    <color name="myColorPrimaryDark">#0969B9</color>
+    <color name="myColorAccent">#CFCB26</color>
+    <color name="myColorPrimaryLight">#629FEE</color>
+    <color name="myColorPrimaryDarkDark">#062746</color>
+    <color name="myHintTextColor">#999999</color>
+
     <color name="black">#000000</color>
-    <!--    <color name="orange">#FDC263</color>-->
     <color name="orange">#FFD700</color>
     <color name="blue">#000066</color>
     <color name="white">#FFFFFF</color>
 
-    <color name="mtrl_textinput_default_box_stroke_color" tools:override="True">@color/colorAccent</color>
+
+    <!--COLOR DEL INPUT TEXT CUANDO NO ESTA "FOCUS"-->
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="True">@color/myHintTextColor</color>
 </resources>

@@ -1,7 +1,8 @@
-package com.modelo.phygital
+package com.modelo.phygital.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.modelo.phygital.R
 
 class LoginPaciente : AppCompatActivity() {
 

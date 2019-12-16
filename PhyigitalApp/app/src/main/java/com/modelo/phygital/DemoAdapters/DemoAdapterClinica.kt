@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.FirebaseDatabase
 import com.modelo.phygital.R
-import com.modelo.phygital.SesionesActivity
+import com.modelo.phygital.ui.SesionesActivity
 import com.modelo.phygital.ui.casos_clinicos.CasoClinico
 
 class DemoAdapterClinica(private val casos: ArrayList<CasoClinico>) : RecyclerView.Adapter<DemoAdapterClinica.DemoViewHolder>() {
