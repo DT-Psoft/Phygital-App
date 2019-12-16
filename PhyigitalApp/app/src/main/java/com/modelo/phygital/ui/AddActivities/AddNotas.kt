@@ -1,4 +1,4 @@
-package com.modelo.phygital.AddActivities
+package com.modelo.phygital.ui.AddActivities
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,12 +6,9 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.FirebaseDatabase
-import com.modelo.phygital.CasoClinicoTabs
-import com.modelo.phygital.MenuPrincipal
+import com.modelo.phygital.ui.CasoClinicoTabs
 import com.modelo.phygital.R
-import com.modelo.phygital.SesionesActivity
 import com.modelo.phygital.tabs.Nota
-import com.modelo.phygital.ui.casos_clinicos.CasoClinico
 
 class AddNotas : AppCompatActivity(){
     private lateinit var etTitulo: EditText

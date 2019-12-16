@@ -9,9 +9,9 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.FirebaseDatabase
-import com.modelo.phygital.CasoClinicoTabs
+import com.modelo.phygital.ui.CasoClinicoTabs
 import com.modelo.phygital.R
-import com.modelo.phygital.Sesion
+import com.modelo.phygital.ui.Sesion
 
 class DemoAdapterAddSesion(private val sesiones: ArrayList<Sesion>) : RecyclerView.Adapter<DemoAdapterAddSesion.DemoViewHolder>() {
 

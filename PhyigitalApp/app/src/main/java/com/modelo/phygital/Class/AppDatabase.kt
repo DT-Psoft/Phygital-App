@@ -1,4 +1,4 @@
-package com.modelo.phygital
+package com.modelo.phygital.Class
 
 import android.content.Context
 import androidx.room.Database
@@ -27,14 +27,17 @@ abstract class AppDatabase : RoomDatabase() {
         private lateinit var currentUser : UserETY
         private lateinit var newUser : UserETY
 
-        fun getLoginUser() = currentUser
+        fun getLoginUser() =
+            currentUser
 
-        fun getNewUser() = newUser
+        fun getNewUser() =
+            newUser
         fun setNewUser(registering: UserETY) {
             newUser = registering
         }
 
-        fun getCurrentUser() = currentUser
+        fun getCurrentUser() =
+            currentUser
         fun setCurrentUser(user: UserETY) {
             currentUser = user
         }
@@ -51,7 +54,9 @@ abstract class AppDatabase : RoomDatabase() {
                     .addCallback(object : RoomDatabase.Callback() {
                         override fun onCreate(db: SupportSQLiteDatabase) {
                             super.onCreate(db)
-                            initializeData(db)
+                            initializeData(
+                                db
+                            )
                         }
                     })
                     .build()
@@ -62,7 +67,7 @@ abstract class AppDatabase : RoomDatabase() {
 
         fun initializeData(db: SupportSQLiteDatabase) {
 
-            db.execSQL("INSERT INTO user VALUES (1,'fe', '1', 0)")
+            db.execSQL("INSERT INTO user VALUES (1,'fede@fede.com', '30003000Aa', 0)")
 
 
         }

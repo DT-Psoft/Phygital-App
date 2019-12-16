@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#05253C"
-    tools:context=".ChooseLoginView">
+    tools:context=".ui.ChooseLoginView">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
             android:layout_height="300dp"
             android:layout_marginBottom="10dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/ic_adjust_black_48dp"  />
+            android:src="@drawable/ic_universidad_modelo"  />
 
         <Button
             android:id="@+id/button_login_fisioterapeuta_menu"

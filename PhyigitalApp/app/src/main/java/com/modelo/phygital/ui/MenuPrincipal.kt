@@ -1,4 +1,4 @@
-package com.modelo.phygital
+package com.modelo.phygital.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -14,8 +14,9 @@ import androidx.appcompat.widget.Toolbar
 import android.view.*
 import androidx.core.view.isVisible
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.modelo.phygital.AddActivities.AddCasosClinicos
-import com.modelo.phygital.AddActivities.AddPacientes
+import com.modelo.phygital.ui.AddActivities.AddCasosClinicos
+import com.modelo.phygital.ui.AddActivities.AddPacientes
+import com.modelo.phygital.R
 
 
 class MenuPrincipal : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
@@ -42,13 +43,11 @@ class MenuPrincipal : AppCompatActivity(),NavigationView.OnNavigationItemSelecte
         fabPaciente.setOnClickListener {
             val intent = Intent(this, AddPacientes::class.java)
             startActivity(intent)
-            finish()
         }
 
         fabClinico.setOnClickListener {
             val intent = Intent(this, AddCasosClinicos::class.java)
             startActivity(intent)
-            finish()
         }
 
 
@@ -61,7 +60,8 @@ class MenuPrincipal : AppCompatActivity(),NavigationView.OnNavigationItemSelecte
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_pacientes, R.id.nav_casoClinico
+                R.id.nav_pacientes,
+                R.id.nav_casoClinico
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -87,7 +87,6 @@ class MenuPrincipal : AppCompatActivity(),NavigationView.OnNavigationItemSelecte
                 fabcs.isClickable = false
                 val intent = Intent(this, AddPacientes::class.java)
                 startActivity(intent)
-                finish()
 
             }
 
@@ -96,8 +95,6 @@ class MenuPrincipal : AppCompatActivity(),NavigationView.OnNavigationItemSelecte
                 fabp.isClickable = false
                 val intent = Intent(this, AddCasosClinicos::class.java)
                 startActivity(intent)
-
-                finish()
             }
         }
 

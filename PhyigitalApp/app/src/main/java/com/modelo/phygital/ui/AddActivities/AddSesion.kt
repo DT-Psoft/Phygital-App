@@ -1,4 +1,4 @@
-package com.modelo.phygital.AddActivities
+package com.modelo.phygital.ui.AddActivities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,8 +7,8 @@ import android.widget.Button
 import android.widget.EditText
 import com.google.firebase.database.FirebaseDatabase
 import com.modelo.phygital.R
-import com.modelo.phygital.Sesion
-import com.modelo.phygital.SesionesActivity
+import com.modelo.phygital.ui.Sesion
+import com.modelo.phygital.ui.SesionesActivity
 
 class AddSesion : AppCompatActivity() {
 
@@ -21,7 +21,7 @@ class AddSesion : AppCompatActivity() {
     private lateinit var btnAddButton: Button
 
 
-    private var sesiones: ArrayList<Sesion> = arrayListOf()
+    //private var sesiones: ArrayList<Sesion> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,9 +57,7 @@ class AddSesion : AppCompatActivity() {
             etDescripcion.setText("")
             etActividades.setText("")
 
-            val intent = Intent(this, SesionesActivity::class.java)
-            startActivity(intent)
-            finish()
+            onBackPressed()
 
         }
     }

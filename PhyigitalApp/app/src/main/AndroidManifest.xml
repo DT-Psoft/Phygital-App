@@ -11,28 +11,26 @@
         android:supportsRtl="true"
         android:theme="@style/NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".AddActivities.AddSesion"></activity>
-        <activity android:name=".AddActivities.AddCasosClinicos" />
-        <activity android:name=".AddActivities.AddPacientes" />
-        <activity android:name=".AddActivities.AddNotas" />
-        <activity android:name=".SesionesActivity" />
+        <activity android:name="com.modelo.phygital.ui.AddActivities.AddSesion" android:theme="@style/AppTheme" />
+        <activity android:name="com.modelo.phygital.ui.AddActivities.AddCasosClinicos" android:theme="@style/AppTheme"/>
+        <activity android:name="com.modelo.phygital.ui.AddActivities.AddPacientes" android:theme="@style/AppTheme" />
+        <activity android:name="com.modelo.phygital.ui.AddActivities.AddNotas" android:theme="@style/AppTheme"/>
         <activity
-            android:name=".ChooseLoginView"
+            android:name=".ui.ChooseLoginView"
             android:label="@string/title_activity_menu_principal" />
-        <activity android:name=".LoginPaciente" />
-        <activity android:name=".LoginFisioterapeuta" />
-        <activity
-            android:name=".SignUpFisio"
-            android:screenOrientation="portrait" />
-        <activity android:name=".CasoClinicoTabs" />
-        <activity android:name=".MenuPrincipal">
+        <activity android:name=".ui.LoginPaciente" />
+        <activity android:name=".ui.LoginFisioterapeuta">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".ui.SignUpFisio"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.CasoClinicoTabs" />
+        <activity android:name=".ui.MenuPrincipal"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

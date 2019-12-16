@@ -1,4 +1,4 @@
-package com.modelo.phygital.AddActivities
+package com.modelo.phygital.ui.AddActivities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,15 +7,13 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
 import com.google.firebase.database.FirebaseDatabase
-import com.modelo.phygital.MenuPrincipal
+import com.modelo.phygital.ui.MenuPrincipal
 import com.modelo.phygital.R
 import com.modelo.phygital.ui.casos_clinicos.CasoClinico
 import com.modelo.phygital.ui.casos_clinicos.CasosClinicosViewModel
 
 class AddCasosClinicos : AppCompatActivity() {
 
-    private lateinit var casosClinicosViewModel: CasosClinicosViewModel
-    private lateinit var layoutname: LinearLayout
 
     private lateinit var etPinPaciente: EditText
     private lateinit var etPacientePadencia: EditText
@@ -52,12 +50,6 @@ class AddCasosClinicos : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-    }
-
-    override fun onBackPressed() {
-        val intent = Intent(this, MenuPrincipal::class.java)
-        startActivity(intent)
-        finish()
     }
 }
 
