@@ -2,7 +2,6 @@ package com.modelo.phygital.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.animation.Animation
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
