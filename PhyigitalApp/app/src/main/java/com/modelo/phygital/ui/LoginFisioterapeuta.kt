@@ -18,6 +18,7 @@ class LoginFisioterapeuta : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_login_fisioterapeuta)
         this.deleteDatabase("fisio.db")
         val db = AppDatabase.getAppDatabase(this)

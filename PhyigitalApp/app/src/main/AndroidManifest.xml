@@ -12,10 +12,18 @@
         android:theme="@style/NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name="com.modelo.phygital.ui.AddActivities.AddSesion" />
-        <activity android:name="com.modelo.phygital.ui.AddActivities.AddCasosClinicos" android:theme="@style/AppTheme"/>
-        <activity android:name="com.modelo.phygital.ui.AddActivities.AddPacientes" android:theme="@style/AppTheme" />
-        <activity android:name="com.modelo.phygital.ui.AddActivities.AddNotas" android:theme="@style/AppTheme"/>
-        <activity android:name="com.modelo.phygital.ui.SesionesActivity" android:theme="@style/AppTheme"/>
+        <activity
+            android:name="com.modelo.phygital.ui.AddActivities.AddCasosClinicos"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.modelo.phygital.ui.AddActivities.AddPacientes"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.modelo.phygital.ui.AddActivities.AddNotas"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.modelo.phygital.ui.SesionesActivity"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".ui.ChooseLoginView"
             android:label="@string/title_activity_menu_principal" />
@@ -31,7 +39,8 @@
             android:name=".ui.SignUpFisio"
             android:screenOrientation="portrait" />
         <activity android:name=".ui.CasoClinicoTabs" />
-        <activity android:name=".ui.LoginFisioterapeuta"/>
+        <activity android:name=".ui.LoginFisioterapeuta" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
