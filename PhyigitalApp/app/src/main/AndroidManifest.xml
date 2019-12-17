@@ -18,6 +18,8 @@
         <activity android:name="com.modelo.phygital.ui.AddActivities.AddPacientes" android:theme="@style/AppTheme" />
         <activity android:name="com.modelo.phygital.ui.AddActivities.AddNotas" android:theme="@style/AppTheme"/>
         <activity android:name="com.modelo.phygital.ui.SesionesActivity" android:theme="@style/AppTheme"/>
+        <activity android:name="com.modelo.phygital.ui.Modelo3DActivity">
+        </activity>
         <activity
             android:name=".ui.ChooseLoginView"
             android:label="@string/title_activity_menu_principal" />
@@ -33,7 +35,8 @@
             android:name=".ui.SignUpFisio"
             android:screenOrientation="portrait" />
         <activity android:name=".ui.CasoClinicoTabs" />
-        <activity android:name=".ui.MenuPrincipal"/>
+        <activity android:name=".ui.MenuPrincipal">
+        </activity>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
