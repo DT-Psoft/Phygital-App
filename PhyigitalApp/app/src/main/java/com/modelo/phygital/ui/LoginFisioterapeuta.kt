@@ -4,11 +4,13 @@ import android.content.Intent
 import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
 import com.google.android.material.textfield.TextInputLayout
 import com.modelo.phygital.Class.AppDatabase
 import com.modelo.phygital.Class.TextValidator
@@ -17,18 +19,29 @@ import com.modelo.phygital.R
 import org.json.JSONArray
 import java.net.URL
 
-class AsyncTaskExample : AsyncTask<String, String, String>() {
+class AsyncTaskExample(val email:String, val pass:String) : AsyncTask<String, String, String>() {
 
     override fun onPreExecute() {
 
     }
 
     @RequiresApi(Build.VERSION_CODES.N)
-    override fun doInBackground(vararg p0: String?): String {
-        val url = URL("http://187.147.89.178:81/api/physioterapist/login/kikeprzn/1234").readText()
-        val array = JSONArray(url)
-        var result = array.getJSONObject(0).getString("user_name")
-        return array.getJSONObject(0).getString("user_name")
+    override fun doInBackground(vararg p0: String?): String? {
+        val url = URL("http://187.147.89.178:81/api/physioterapist/login/${email}/${pass}").readText()
+        val error = "Error"
+        Log.d("hola",url)
+        if(url != "Datos incorectos")
+        {
+
+            return null
+        }
+        else
+        {
+
+            val array = JSONArray(url)
+            var result = array.getJSONObject(0).getString("user_name") + array.getJSONObject(0).getString("password")
+            return result
+        }
     }
 
 
@@ -71,23 +84,22 @@ class LoginFisioterapeuta : AppCompatActivity() {
             }
         })
 
-        AsyncTaskExample().execute()
-
         val textInputLayout_password: TextInputLayout =
             findViewById(R.id.textInputLayout_fisioPasswordLogin)
-        textInputLayout_password.editText!!.addTextChangedListener(object : TextValidator() {
-            override fun validate() {
-                PASSWORDFLAG = validatePassword(textInputLayout_password)
-            }
-        })
+     //   textInputLayout_password.editText!!.addTextChangedListener(object : TextValidator() {
+     //       override fun validate() {
+     //           PASSWORDFLAG = validatePassword(textInputLayout_password)
+      //      }
+     //   })
 
         button_fisioLogIn.setOnClickListener {
-            if (EMAILFLAG && PASSWORDFLAG) {
+        //    if (EMAILFLAG && PASSWORDFLAG) {
                 try {
                     val email = textInputLayout_email.editText!!.text.toString()
                     val password = textInputLayout_password.editText!!.text.toString()
                     val currentUser: UserETY? = db.UserDAO().getUserByName(email, password)
-                    if (currentUser != null) {
+                    val current = AsyncTaskExample(email, password).execute()
+                    if (current != null) {
                         val intentMenu = Intent(this, MenuPrincipal::class.java)
                         startActivity(intentMenu)
                     }
@@ -98,7 +110,7 @@ class LoginFisioterapeuta : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
                 }
-            }
+         //   }
         }
 
     }

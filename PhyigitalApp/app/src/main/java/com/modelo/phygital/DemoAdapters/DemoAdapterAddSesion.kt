@@ -35,10 +35,10 @@ class DemoAdapterAddSesion(private val sesiones: ArrayList<Sesion>) : RecyclerVi
             btnEditSesion = view.findViewById(R.id.edit_sesion_button)
         }
 
-        public fun bind(sesion: Sesion) {
+        public fun bind(sesion: Sesion, position: Int) {
 
             tvPacienteSesion.setText("${sesion.paciente}")
-            tvSesion.setText("${sesion.sesion}")
+            tvSesion.setText("${position}")
             tvFechaSesion.setText("${sesion.fecha}")
             //  tvDescripcion.setText("${sesion.descripcion}")
             val database = FirebaseDatabase.getInstance()
@@ -79,7 +79,7 @@ class DemoAdapterAddSesion(private val sesiones: ArrayList<Sesion>) : RecyclerVi
 
     override fun getItemCount() = sesiones.size
     override fun onBindViewHolder(holder: DemoViewHolder, position: Int) {
-        holder.bind(sesiones[position])
+        holder.bind(sesiones[position], position+1)
     }
 
 }

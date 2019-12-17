@@ -40,16 +40,6 @@
             android:textColorHint="#000000" />
 
         <EditText
-            android:id="@+id/sesion_numero_text"
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="20dp"
-            android:hint="Numero de sesion"
-            android:maxLines="1"
-            android:textColor="#000000"
-            android:textColorHint="#000000" />
-
-        <EditText
             android:id="@+id/fecha_sesion_text"
             android:layout_width="match_parent"
             android:layout_height="100dp"
