@@ -52,7 +52,6 @@ dependencies {
     api 'com.squareup.retrofit2:retrofit:2.3.0'
     api 'com.squareup.retrofit2:converter-gson:2.3.0'
     api 'com.squareup.retrofit2:converter-scalars:2.3.0'
-    implementation 'com.biodigital:human-android-sdk:1.2.1'
 
     // => Dependencias agregadas para librería Room
     def room_version = "2.2.0-rc01"

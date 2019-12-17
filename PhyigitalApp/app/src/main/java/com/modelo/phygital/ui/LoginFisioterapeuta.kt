@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -15,15 +14,10 @@ import com.modelo.phygital.Class.AppDatabase
 import com.modelo.phygital.Class.TextValidator
 import com.modelo.phygital.Entities.UserETY
 import com.modelo.phygital.R
-import org.xml.sax.InputSource
-import org.xml.sax.XMLReader
-
-import java.net.HttpURLConnection
+import org.json.JSONArray
 import java.net.URL
-import javax.xml.parsers.SAXParser
-import javax.xml.parsers.SAXParserFactory
 
-class AsyncTaskExample(private var activity: LoginFisioterapeuta?) : AsyncTask<String, String, String>() {
+class AsyncTaskExample : AsyncTask<String, String, String>() {
 
     override fun onPreExecute() {
 
@@ -31,22 +25,10 @@ class AsyncTaskExample(private var activity: LoginFisioterapeuta?) : AsyncTask<S
 
     @RequiresApi(Build.VERSION_CODES.N)
     override fun doInBackground(vararg p0: String?): String {
-        var result = ""
-        val url = URL("http://187.147.89.178:81/api/physioterapist/login/kikeprzn/1234")
-
-        with(url.openConnection() as HttpURLConnection) {
-            requestMethod = "GET"  // optional default is GET
-
-            println("\nSent 'GET' request to URL : $url; Response Code : $responseCode")
-
-            inputStream.bufferedReader().use {
-                it.lines().forEach { line ->
-                    println(line)
-                }
-            }
-            return result
-        }
-
+        val url = URL("http://187.147.89.178:81/api/physioterapist/login/kikeprzn/1234").readText()
+        val array = JSONArray(url)
+        var result = array.getJSONObject(0).getString("user_name")
+        return array.getJSONObject(0).getString("user_name")
     }
 
 
@@ -89,7 +71,7 @@ class LoginFisioterapeuta : AppCompatActivity() {
             }
         })
 
-        AsyncTaskExample(this).execute()
+        AsyncTaskExample().execute()
 
         val textInputLayout_password: TextInputLayout =
             findViewById(R.id.textInputLayout_fisioPasswordLogin)
@@ -148,7 +130,7 @@ class LoginFisioterapeuta : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.N)
     private fun logIn() {
 
-        }
+    }
 }
 
 
