@@ -47,6 +47,13 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     implementation 'com.google.android.material:material:1.0.0'
 
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    api 'org.nanohttpd:nanohttpd:2.3.1'
+    api 'com.squareup.retrofit2:retrofit:2.3.0'
+    api 'com.squareup.retrofit2:converter-gson:2.3.0'
+    api 'com.squareup.retrofit2:converter-scalars:2.3.0'
+    implementation 'com.biodigital:human-android-sdk:1.2.1'
+
     // => Dependencias agregadas para librería Room
     def room_version = "2.2.0-rc01"
     implementation "androidx.room:room-runtime:$room_version"
@@ -55,7 +62,6 @@ dependencies {
     // => Dependencias agregadas para Stetho
     implementation 'com.facebook.stetho:stetho:1.5.1'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
-    implementation 'com.android.support:appcompat-v7:28.0.0'
 
 
 }
