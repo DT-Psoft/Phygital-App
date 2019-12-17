@@ -19,17 +19,18 @@
         <activity android:name="com.modelo.phygital.ui.AddActivities.AddNotas" android:theme="@style/AppTheme"/>
         <activity android:name="com.modelo.phygital.ui.SesionesActivity" android:theme="@style/AppTheme"/>
         <activity android:name="com.modelo.phygital.ui.Modelo3DActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.ChooseLoginView"
             android:label="@string/title_activity_menu_principal" />
         <activity android:name=".ui.LoginPaciente" />
         <activity android:name=".ui.LoginFisioterapeuta">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.SignUpFisio"
