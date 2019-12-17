@@ -18,11 +18,7 @@
         <activity android:name="com.modelo.phygital.ui.AddActivities.AddPacientes" android:theme="@style/AppTheme" />
         <activity android:name="com.modelo.phygital.ui.AddActivities.AddNotas" android:theme="@style/AppTheme"/>
         <activity android:name="com.modelo.phygital.ui.SesionesActivity" android:theme="@style/AppTheme"/>
-        <activity
-            android:name=".ui.ChooseLoginView"
-            android:label="@string/title_activity_menu_principal" />
-        <activity android:name=".ui.LoginPaciente" />
-        <activity android:name=".ui.LoginFisioterapeuta">
+        <activity android:name="com.modelo.phygital.ui.Modelo3DActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,10 +26,18 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".ui.ChooseLoginView"
+            android:label="@string/title_activity_menu_principal" />
+        <activity android:name=".ui.LoginPaciente" />
+        <activity android:name=".ui.LoginFisioterapeuta">
+
+        </activity>
+        <activity
             android:name=".ui.SignUpFisio"
             android:screenOrientation="portrait" />
         <activity android:name=".ui.CasoClinicoTabs" />
-        <activity android:name=".ui.MenuPrincipal"/>
+        <activity android:name=".ui.MenuPrincipal">
+        </activity>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

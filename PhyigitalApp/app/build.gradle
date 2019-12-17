@@ -61,6 +61,8 @@ dependencies {
     // => Dependencias agregadas para Stetho
     implementation 'com.facebook.stetho:stetho:1.5.1'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
+    implementation 'com.biodigital:human-android-sdk:1.2.1'
+    //noinspection GradleCompatible
 
 
 }

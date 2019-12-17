@@ -1,9 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.modelo.phygital.ui.Modelo3DActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.biodigital.humansdk.HKHuman
+        android:id="@+id/humanbody"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="14dp">
+
+            <Button
+                android:id="@+id/homebutton"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <Button
+                android:id="@+id/resetbutton"
+                style="@android:style/Widget.Button.Small"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/reset" />
+
+            <LinearLayout
+                android:id="@+id/dissectmenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="0dp">
+
+                <Button
+                    android:id="@+id/dissectbutton"
+                    style="@android:style/Widget.Button.Small"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/dissect" />
+
+                <Button
+                    android:id="@+id/undobutton"
+                    style="@android:style/Widget.Button.Small"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/undo"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/xraybutton"
+                style="@android:style/Widget.Button.Small"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/xray" />
+
+            <Button
+                android:id="@+id/isolatebutton"
+                style="@android:style/Widget.Button.Small"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/isolate" />
+
+            <Button
+                android:id="@+id/sharebutton"
+                style="@android:style/Widget.Button.Small"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/share" />
+
+            <LinearLayout
+                android:id="@+id/allpaintstuff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/paintbutton"
+                    style="@android:style/Widget.Button.Small"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/paint" />
+
+                <LinearLayout
+                    android:id="@+id/paintmenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal"
+                    android:visibility="invisible">
+
+                    <Button
+                        android:id="@+id/redbutton"
+                        style="@android:style/Widget.Button.Small"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="8dp"
+                        android:background="#FF0000" />
+
+                    <Button
+                        android:id="@+id/greenbutton"
+                        style="@android:style/Widget.Button.Small"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="8dp"
+                        android:background="#00FF00" />
+
+                    <Button
+                        android:id="@+id/bluebutton"
+                        style="@android:style/Widget.Button.Small"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="8dp"
+                        android:background="#0000FF" />
+
+                    <Button
+                        android:id="@+id/yellowbutton"
+                        style="@android:style/Widget.Button.Small"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="8dp"
+                        android:background="#FFFF00" />
+
+                    <Button
+                        android:id="@+id/undopaintbutton"
+                        style="@android:style/Widget.Button.Small"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:layout_marginRight="2dp"
+                        android:background="@drawable/undo" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/category"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingTop="5dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="5dp">
+
+            <ScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_above="@+id/indicatorContainer"
+                android:fillViewport="true"
+                android:scrollbars="vertical">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/humanChapterPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null" />
+            </ScrollView>
+
+            <RelativeLayout
+                android:id="@+id/indicatorContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:padding="5dp">
+
+                <LinearLayout
+                    android:id="@+id/dots"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal"></LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true" />
+
+    </com.biodigital.humansdk.HKHuman>
+</RelativeLayout>
