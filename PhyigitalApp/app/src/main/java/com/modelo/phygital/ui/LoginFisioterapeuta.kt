@@ -1,9 +1,13 @@
 package com.modelo.phygital.ui
 
 import android.content.Intent
+import android.os.AsyncTask
+import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputLayout
@@ -11,16 +15,56 @@ import com.modelo.phygital.Class.AppDatabase
 import com.modelo.phygital.Class.TextValidator
 import com.modelo.phygital.Entities.UserETY
 import com.modelo.phygital.R
+import org.xml.sax.InputSource
+import org.xml.sax.XMLReader
 
+import java.net.HttpURLConnection
+import java.net.URL
+import javax.xml.parsers.SAXParser
+import javax.xml.parsers.SAXParserFactory
+
+class AsyncTaskExample(private var activity: LoginFisioterapeuta?) : AsyncTask<String, String, String>() {
+
+    override fun onPreExecute() {
+
+    }
+
+    @RequiresApi(Build.VERSION_CODES.N)
+    override fun doInBackground(vararg p0: String?): String {
+        var result = ""
+        val url = URL("http://187.147.89.178:81")
+
+        with(url.openConnection() as HttpURLConnection) {
+            requestMethod = "GET"  // optional default is GET
+
+            println("\nSent 'GET' request to URL : $url; Response Code : $responseCode")
+
+            inputStream.bufferedReader().use {
+                it.lines().forEach { line ->
+                    println(line)
+                }
+            }
+            return result
+        }
+
+    }
+
+
+    override fun onPostExecute(result: String?) {
+
+    }
+}
 
 class LoginFisioterapeuta : AppCompatActivity() {
 
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_fisioterapeuta)
         this.deleteDatabase("fisio.db")
         val db = AppDatabase.getAppDatabase(this)
+
 
         var EMAILFLAG = false
         var PASSWORDFLAG = false
@@ -34,6 +78,8 @@ class LoginFisioterapeuta : AppCompatActivity() {
             }
         }
 
+        logIn()
+
         val textInputLayout_email: TextInputLayout =
             findViewById(R.id.textInputLayout_fisioEmailLogin)
         textInputLayout_email.editText!!.addTextChangedListener(object : TextValidator() {
@@ -41,6 +87,8 @@ class LoginFisioterapeuta : AppCompatActivity() {
                 EMAILFLAG = validateEmail(textInputLayout_email)
             }
         })
+
+        AsyncTaskExample(this).execute()
 
         val textInputLayout_password: TextInputLayout =
             findViewById(R.id.textInputLayout_fisioPasswordLogin)
@@ -95,6 +143,11 @@ class LoginFisioterapeuta : AppCompatActivity() {
             .show()
 
     }
+
+    @RequiresApi(Build.VERSION_CODES.N)
+    private fun logIn() {
+
+        }
 }
 
 

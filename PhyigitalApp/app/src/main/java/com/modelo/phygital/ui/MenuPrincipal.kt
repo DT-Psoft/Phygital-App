@@ -2,6 +2,7 @@ package com.modelo.phygital.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -66,6 +67,7 @@ class MenuPrincipal : AppCompatActivity(),NavigationView.OnNavigationItemSelecte
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        Log.d("hola","si entre")
     }
 
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
@@ -73,28 +75,25 @@ class MenuPrincipal : AppCompatActivity(),NavigationView.OnNavigationItemSelecte
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val fabp: FloatingActionButton = findViewById(R.id.fabP)
         val fabcs: FloatingActionButton = findViewById(R.id.fabCS)
-     //   drawerLayout.closeDrawers()
+        drawerLayout.closeDrawers()
 
         fabp.isVisible = true
         fabp.isClickable = true
         fabcs.isVisible = true
         fabcs.isClickable = true
 
+
         when (p0.itemId) {
 
             R.id.nav_pacientes -> {
                 fabcs.isVisible = false
                 fabcs.isClickable = false
-                val intent = Intent(this, AddPacientes::class.java)
-                startActivity(intent)
 
             }
 
             R.id.nav_casoClinico -> {
                 fabp.isVisible = false
                 fabp.isClickable = false
-                val intent = Intent(this, AddCasosClinicos::class.java)
-                startActivity(intent)
             }
         }
 
