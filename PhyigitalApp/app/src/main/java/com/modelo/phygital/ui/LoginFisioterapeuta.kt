@@ -32,7 +32,7 @@ class AsyncTaskExample(private var activity: LoginFisioterapeuta?) : AsyncTask<S
     @RequiresApi(Build.VERSION_CODES.N)
     override fun doInBackground(vararg p0: String?): String {
         var result = ""
-        val url = URL("http://187.147.89.178:81")
+        val url = URL("http://187.147.89.178:81/api/physioterapist/login/kikeprzn/1234")
 
         with(url.openConnection() as HttpURLConnection) {
             requestMethod = "GET"  // optional default is GET
@@ -85,7 +85,7 @@ class LoginFisioterapeuta : AppCompatActivity() {
             findViewById(R.id.textInputLayout_fisioEmailLogin)
         textInputLayout_email.editText!!.addTextChangedListener(object : TextValidator() {
             override fun validate() {
-                EMAILFLAG = validateEmail(textInputLayout_email)
+                EMAILFLAG = validateUserName(textInputLayout_email)
             }
         })
 
