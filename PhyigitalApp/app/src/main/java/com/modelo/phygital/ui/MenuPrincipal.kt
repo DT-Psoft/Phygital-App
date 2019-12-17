@@ -68,6 +68,7 @@ class MenuPrincipal : AppCompatActivity(),NavigationView.OnNavigationItemSelecte
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
         Log.d("hola","si entre")
+        navView.setCheckedItem(R.id.nav_casoClinico)
     }
 
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
