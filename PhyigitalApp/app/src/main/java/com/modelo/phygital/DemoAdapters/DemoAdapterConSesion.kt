@@ -31,9 +31,9 @@ class DemoAdapterConSesion(private val cses: ArrayList<ConSesion>) : RecyclerVie
 
         }
 
-        public fun bind(cses: ConSesion) {
+        public fun bind(cses: ConSesion, position: Int) {
 
-            etTitulo1.setText("${cses.paciente},${cses.sesion}")
+            etTitulo1.setText("${"Sesion" + " " + position}, ${cses.paciente}")
             etTitulo2.setText("${cses.fecha}")
             etDescripcion.setText("${cses.descripcion}")
             etActividades.setText("${cses.actividades}")
@@ -58,7 +58,7 @@ class DemoAdapterConSesion(private val cses: ArrayList<ConSesion>) : RecyclerVie
     }
 
     override fun onBindViewHolder(holder: DemoViewHolder, position: Int) {
-        holder.bind(cses[position])
+        holder.bind(cses[position], position+1)
     }
 
     override fun getItemCount() = cses.size

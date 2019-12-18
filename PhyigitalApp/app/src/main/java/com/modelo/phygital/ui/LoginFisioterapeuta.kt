@@ -32,15 +32,14 @@ class AsyncTaskExample(val email:String, val pass:String) : AsyncTask<String, St
         Log.d("hola",url)
         if(url != "Datos incorectos")
         {
-
             return null
+
         }
         else
         {
-
             val array = JSONArray(url)
             var result = array.getJSONObject(0).getString("user_name") + array.getJSONObject(0).getString("password")
-            return result
+            return array.getJSONObject(0).getString("user_name") + array.getJSONObject(0).getString("password")
         }
     }
 

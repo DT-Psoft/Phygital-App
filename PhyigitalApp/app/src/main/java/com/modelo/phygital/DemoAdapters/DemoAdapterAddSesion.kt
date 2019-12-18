@@ -17,30 +17,31 @@ class DemoAdapterAddSesion(private val sesiones: ArrayList<Sesion>) : RecyclerVi
 
 
     class DemoViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-        private var tvPacienteSesion: TextView
+      //  private var tvPacienteSesion: TextView
         private var tvSesion: TextView
         private var tvFechaSesion: TextView
-        // private var tvDescripcion: TextView
+        private var tvDescripcion: TextView
         private var btnDeleteSesion: ImageButton
         private var btnEditSesion: ImageButton
 
 
 
         init {
-            tvPacienteSesion = view.findViewById(R.id.paciente_sesion_tv)
+           // tvPacienteSesion = view.findViewById(R.id.paciente_sesion_tv)
+            //tvPacienteSesion = view.findViewById(R.id.descripcion_sesion_tv)
             tvSesion = view.findViewById(R.id.sesion_tv)
             tvFechaSesion = view.findViewById(R.id.fecha_tv)
-            // tvDescripcion= view.findViewById(R.id.descripcion_tv)
+            tvDescripcion= view.findViewById(R.id.descripcion_sesion_tv)
             btnDeleteSesion = view.findViewById(R.id.delete_sesion_button)
             btnEditSesion = view.findViewById(R.id.edit_sesion_button)
         }
 
         public fun bind(sesion: Sesion, position: Int) {
 
-            tvPacienteSesion.setText("${sesion.paciente}")
+         //   tvPacienteSesion.setText("${sesion.paciente}")
             tvSesion.setText("${position}")
-            tvFechaSesion.setText("${sesion.fecha}")
-            //  tvDescripcion.setText("${sesion.descripcion}")
+            tvFechaSesion.setText("${sesion.sesion}")
+            tvDescripcion.setText("${sesion.descripcion}")
             val database = FirebaseDatabase.getInstance()
             val usersRef = database.getReference("app").child("sesionClinica")
 

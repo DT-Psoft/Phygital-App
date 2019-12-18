@@ -13,7 +13,7 @@ import com.modelo.phygital.DemoAdapters.DemoAdapterConSesion
 import com.modelo.phygital.R
 
 
-data class ConSesion(var paciente: String = "", var sesion: String = "", var fecha: String = "", var descripcion: String = "", var actividades: String ="") {
+data class ConSesion(var paciente: String = "", var fecha: String = "", var descripcion: String = "", var actividades: String ="") {
     var id: String? = null
 
     override fun equals(other: Any?): Boolean {
@@ -84,7 +84,6 @@ class SesionesFragment : Fragment() {
                 csesC?.id = p0.key
                 val currentCaso: ConSesion? = cses.get(cses.indexOf(csesC))
                 currentCaso?.paciente = csesC!!.paciente
-                currentCaso?.sesion = csesC!!.sesion
                 currentCaso?.fecha = csesC!!.fecha
                 currentCaso?.descripcion = csesC!!.descripcion
                 currentCaso?.actividades = csesC!!.actividades
